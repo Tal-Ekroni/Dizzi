@@ -1,10 +1,11 @@
-// import './App.css';
+import './assets/styles/main.scss';
+
+import { Results } from './pages/results';
 
 function App() {
   return (
     <div className="App">
-   delete all of the shit 
-   kakamayka
+      <Results />
     </div>
   );
 }
