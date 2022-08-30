@@ -1,5 +1,6 @@
 export const data = [
     {
+        _id: "c101",
         manufacturer: "HYUNDAI",
         model: "IONIQ",
         type: "family",
@@ -23,6 +24,7 @@ export const data = [
 
     },
     {
+        _id: "c102",
         manufacturer: "HYUNDAI",
         model: "KONA EV",
         type: "family",
@@ -46,6 +48,7 @@ export const data = [
 
     },
     {
+        _id: "c103",
         manufacturer: "HYUNDAI",
         model: "ELANTRA Hybrid",
         type: "executive",
@@ -72,6 +75,7 @@ export const data = [
 
     },
     {
+        _id: "c104",
         manufacturer: "HYUNDAI",
         model: "ELANTRA VENUE",
         type: "suv",
@@ -98,6 +102,7 @@ export const data = [
 
     },
     {
+        _id: "c105",
         manufacturer: "HYUNDAI",
         model: "TUCSON",
         type: "family",
@@ -124,6 +129,7 @@ export const data = [
 
     },
     {
+        _id: "c106",
         manufacturer: "HYUNDAI",
         model: "i10",
         type: "mini",
@@ -150,6 +156,7 @@ export const data = [
 
     },
     {
+        _id: "c107",
         manufacturer: "HYUNDAI",
         model: "KONA Hybrid",
         type: "family",
@@ -176,6 +183,7 @@ export const data = [
 
     },
     {
+        _id: "c108",
         manufacturer: "HYUNDAI",
         model: "KONA",
         type: "family",
@@ -202,6 +210,7 @@ export const data = [
 
     },
     {
+        _id: "c109",
         manufacturer: "HYUNDAI",
         model: "SONATA Hybrid",
         type: "executive",
@@ -228,6 +237,7 @@ export const data = [
 
     },
     {
+        _id: "c110",
         manufacturer: "HYUNDAI",
         model: "SONATA Turbo",
         type: "executive",
@@ -254,6 +264,7 @@ export const data = [
 
     },
     {
+        _id: "c111",
         manufacturer: "HYUNDAI",
         model: "i20",
         type: "mini",
@@ -280,6 +291,7 @@ export const data = [
 
     },
     {
+        _id: "c112",
         manufacturer: "HYUNDAI",
         model: "Sante Fe",
         type: "SUV",
@@ -306,6 +318,7 @@ export const data = [
 
     },
     {
+        _id: "c113",
         manufacturer: "HYUNDAI",
         model: "PALISADE",
         type: "SUV",
@@ -332,6 +345,7 @@ export const data = [
 
     },
     {
+        _id: "c114",
         manufacturer: "HYUNDAI",
         model: "BAYON",
         type: "family",
