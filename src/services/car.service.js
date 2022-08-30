@@ -1,18 +1,10 @@
-
 import { storageService } from './async-storage.service.js'
-import { utilService } from './util.service.js'
-import { userService } from './user.service.js'
-
-const STORAGE_KEY = 'car'
 
 export const carService = {
     query,
     getById,
     save,
     remove,
-    getEmptyCar,
-    subscribe
-
 }
 
 
