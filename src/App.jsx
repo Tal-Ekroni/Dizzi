@@ -1,10 +1,9 @@
-// import './App.css';
+import Questionnaire from "./pages/questionnaire";
 
 function App() {
   return (
     <div className="App">
-   delete all of the shit 
-   kakamayka
+      <Questionnaire />
     </div>
   );
 }
