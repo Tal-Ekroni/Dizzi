@@ -12,38 +12,24 @@ export const carService = {
     remove,
     getEmptyCar,
     subscribe
-    
+
 }
-window.cs = carService;
 
 
 function query() {
-    return storageService.query(STORAGE_KEY)
+    return storageService.query()
 }
 function getById(carId) {
-    return storageService.get(STORAGE_KEY, carId)
+    return storageService.get(carId)
 }
 function remove(carId) {
-    // return new Promise((resolve, reject) => {
-    //     setTimeout(reject, 2000)
-    // })
-    // return Promise.reject('Not now!');
-    return storageService.remove(STORAGE_KEY, carId)
+    return storageService.remove(carId)
 }
 function save(car) {
     if (car._id) {
-        return storageService.put(STORAGE_KEY, car)
+        return storageService.put(car)
     } else {
-        car.owner = userService.getLoggedinUser()
-        return storageService.post(STORAGE_KEY, car)
+        return storageService.post(car)
     }
 }
-
-function getEmptyCar() {
-    return {
-        vendor: 'Susita-' + (Date.now() % 1000),
-        price: utilService.getRandomIntInclusive(1000, 9000),
-    }
-}
-
 
