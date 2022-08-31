@@ -17,7 +17,6 @@ export const Results = () => {
       <Header />
       <div className="car-list-container">{cars.length !== 0 && <CarsList cars={cars} />}</div>
       <SearchAgain />
-      <Footer isFull={true} />
     </section>
   )
 }
