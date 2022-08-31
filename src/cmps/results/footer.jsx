@@ -1,10 +1,12 @@
+import { useLocation } from 'react-router-dom'
 import logo from '../../assets/img/logo-demo.JPG'
 
-export const Footer = ({ isFull }) => {
+export const Footer = () => {
+  const location = useLocation()
   const nav = ['בואו נכיר לעומק', 'תקנון אתר', 'מדניות שימוש', 'הצהרת נגישות', 'צור קשר']
 
   return (
-    <footer className={`${isFull ? 'full' : ''}`}>
+    <footer className={`${location.pathname === '/results' ? 'full' : ''}`}>
       <div className="footer-inner">
         <div className="logo-container">
           <img src={logo} alt="" />
