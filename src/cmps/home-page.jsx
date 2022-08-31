@@ -1,7 +1,7 @@
 export default function HomePage({setPage}) {
    
     return (
-    <div className="home-page flex column justify-center align-center">
+    <div className="home-page">
     ברוכים הבאים!
     <p>תתחילו למלא כבר כפרה עליכם</p>
 

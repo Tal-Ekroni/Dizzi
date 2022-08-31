@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import routes from './routes.js'
 
 import './assets/styles/main.scss';
@@ -6,8 +6,10 @@ import { Footer } from './cmps/results/footer';
 
 
 function App() {
+  const location = useLocation()
+  console.log(location);
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundColor: location.pathname === '/' ? '#48966c' : '' }}>
       <Routes>
         {routes.map((route, idx) => (
           <Route key={idx} path={route.path} element={<route.component />} />

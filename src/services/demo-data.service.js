@@ -372,3 +372,12 @@ export const data = [
 
     },
 ]
+
+
+
+
+export const questionnaireOptions = {
+    carTypes: ['executive', 'family', 'mini', 'crossover', 'pick-up', 'sports', 'prestige', 'minivan'],
+    carFeatures: ['safety', 'performance', 'gasUsage', 'accessories', 'space', 'trunkj', 'נוחות', 'רכב גבוה'],
+
+}

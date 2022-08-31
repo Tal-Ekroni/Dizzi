@@ -1,0 +1,10 @@
+.luggage-pick {
+    color: white;
+    @include questionnaireCenter;
+}
+
+.luggage-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}

@@ -1,17 +1,19 @@
 
-export default function BudgetPick({ Questionnaire, setQuestionnaire, setPage }) {
+export default function BudgetPick({ questionnaire, setQuestionnaire, setPage }) {
     const onChooseOption = () => {
-        setQuestionnaire({ ...Questionnaire, isBudgetMonthly: !Questionnaire.isBudgetMonthly })
+        setQuestionnaire({ ...questionnaire, isBudgetMonthly: !questionnaire.isBudgetMonthly })
     }
     return (
-        <>
-            <label class="switch">
+        <div className="budget-pick">
+
+            <label className="switch">
                 תשלום חד פעמי או חודשי חביבי
-                <input type="checkbox" defaultChecked={Questionnaire.isBudgetMonthly} onChange={onChooseOption} />
-                <span class="slider round"></span>
+                <input type="checkbox" defaultChecked={questionnaire.isBudgetMonthly} onChange={onChooseOption} />
+                <span className="slider round"></span>
             </label>
             <button onClick={() => { setPage(3) }}>תקדם</button>
 
-        </>
+        </div>
+        
     )
 }
