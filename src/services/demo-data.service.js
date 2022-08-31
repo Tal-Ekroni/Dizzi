@@ -1,7 +1,8 @@
 export const data = [
     {
-        manufacturer: "HYUNDAI",
-        model: "IONIQ",
+        _id: "c101",
+        manufacturer: "יונדאי",
+        model: "איוניק",
         type: "family",
         price: "199900",
         height: 1647,
@@ -23,8 +24,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "KONA EV",
+        _id: "c102",
+        manufacturer: "יונדאי",
+        model: "קונה EV",
         type: "family",
         price: "148900",
         height: 1570,
@@ -46,8 +48,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "ELANTRA Hybrid",
+        _id: "c103",
+        manufacturer: "יונדאי",
+        model: "אלנטרה הייבריד",
         type: "executive",
         price: "152900",
         height: 1420,
@@ -72,8 +75,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "ELANTRA VENUE",
+        _id: "c104",
+        manufacturer: "יונדאי",
+        model: "אלנטרה וניו",
         type: "suv",
         price: "113900",
         motor: 1.6,
@@ -98,8 +102,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "TUCSON",
+        _id: "c105",
+        manufacturer: "יונדאי",
+        model: "טוסון",
         type: "family",
         price: "166900",
         motor: 2,
@@ -124,7 +129,8 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
+        _id: "c106",
+        manufacturer: "יונדאי",
         model: "i10",
         type: "mini",
         price: "82900",
@@ -150,8 +156,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "KONA Hybrid",
+        _id: "c107",
+        manufacturer: "יונדאי",
+        model: "קונה הייבריד",
         type: "family",
         price: "149900",
         motor: 1.6,
@@ -176,8 +183,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "KONA",
+        _id: "c108",
+        manufacturer: "יונדאי",
+        model: "קונה",
         type: "family",
         price: "131900",
         motor: 1.6,
@@ -202,8 +210,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "SONATA Hybrid",
+        _id: "c109",
+        manufacturer: "יונדאי",
+        model: "סונטה הייבריד",
         type: "executive",
         price: "201900",
         motor: 2,
@@ -228,8 +237,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "SONATA Turbo",
+        _id: "c110",
+        manufacturer: "יונדאי",
+        model: "סונטה טורבו",
         type: "executive",
         price: "189900",
         motor: 1.6,
@@ -254,7 +264,8 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
+        _id: "c111",
+        manufacturer: "יונדאי",
         model: "i20",
         type: "mini",
         price: "108900",
@@ -280,8 +291,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "Sante Fe",
+        _id: "c112",
+        manufacturer: "יונדאי",
+        model: "סנטה פה",
         type: "SUV",
         price: "269900",
         motor: 2.2,
@@ -306,8 +318,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "PALISADE",
+        _id: "c113",
+        manufacturer: "יונדאי",
+        model: "פאליסאדה",
         type: "SUV",
         price: "319900",
         motor: 3.8,
@@ -332,8 +345,9 @@ export const data = [
 
     },
     {
-        manufacturer: "HYUNDAI",
-        model: "BAYON",
+        _id: "c114",
+        manufacturer: "יונדאי",
+        model: "באיון",
         type: "family",
         price: "123900",
         motor: 1,

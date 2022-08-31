@@ -1,0 +1,183 @@
+.results {
+    header {
+        background-color: $clr2;
+        color: #fff;
+        height: 130px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        margin-bottom: 2rem;
+        
+        h1 {
+            font-family: FbOgen-black;
+            font-size: 4.5rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        h3 {
+            font-size: 2rem;
+        }
+        
+        .inner-background{
+            border-bottom-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+            background-color: $clr1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90%;
+        }
+    }
+
+    .car-list-container {
+        margin: auto;
+    }
+
+    .car-list {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+        .car-preview {
+            position: relative;
+            background-color: $clr1;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 450px;
+            padding: 0.5rem;
+            padding-bottom: 1rem;
+            border-radius: 30px;
+            width: 290px;
+
+            &.best-match {
+                background-color: $clr3;
+            }
+
+            .car-details {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+
+                .title {
+                    font-size: 2rem;
+                }
+
+                .motor {
+                    font-size: 1.5rem;
+                }
+
+                .price {
+                    font-size: 2rem;
+                }
+            }
+
+            .btns-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 13px;
+                
+                button {
+                    background-color: #fff;
+                    color: $clr1;
+                    border-radius: 1rem;
+                    font-size: 1.4rem;
+                    border: 0;
+                    outline: 0;
+                    height: 35px;
+                    width: 120%;
+                }
+            }
+
+            .best-match-title {
+                position: absolute;
+                color: $clr1;
+                top: -25px;
+            }
+
+            .car-img-container {
+                width: 100%;
+                border-top-left-radius: 30px ;
+                border-top-right-radius: 30px ;
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50%;
+                
+                & > * {
+                    border-top-left-radius: 30px ;
+                    border-top-right-radius: 30px ;
+                }
+            }
+
+            .car-logo {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate(-25%, -25%);
+
+                & * {
+                    border-radius: 50%;
+                }
+                
+                .car-logo-outer {
+                    width: 75px;
+                    height: 75px;
+                    background-color: $clr1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .car-logo-inner {
+                    width: 60px;
+                    height: 60px;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    .search-again {
+        text-align: center;
+
+        h3,button {
+            display: inline;
+            margin-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: $clr1;
+            font-size: 1.8rem;
+            margin-inline-end: 0.8rem;
+        }
+
+        button {
+            background-color: $clr1;
+            color: #fff;
+            border-radius: 20px;
+            border: 0;
+            font-size: 1.5rem;
+            padding-block: 0.25rem;
+            padding-inline: 0.5rem;
+
+            span {
+                font-family: FbOgen-black;
+            }
+        }
+        
+        p {
+            color: $clr1;
+            font-family: FbOgen-black;
+        }
+    }
+}
