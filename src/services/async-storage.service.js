@@ -1,26 +1,26 @@
-import { data } from "./demo-data.service"
+import { data } from "./demo-data.service";
 export const storageService = {
-    query,
-    // get,
-    // post,
-    // put,
-    // remove,
-    // postMany
-}
+  query,
+  get,
+  // post,
+  // put,
+  // remove,
+  // postMany
+};
 
 function query(delay = 1200) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(data)
-        }, delay)
-    })
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(data);
+    }, delay);
+  });
 }
 
-
-// function get(entityId) {
-//     return query()
-//         .then(entities => entities.find(entity => entity._id === entityId))
-// }
+function get(entityId) {
+  return query().then((entities) =>
+    entities.find((entity) => entity._id === entityId)
+  );
+}
 // function post(newEntity) {
 //     newEntity._id = _makeId()
 //     return query()
@@ -49,7 +49,6 @@ function query(delay = 1200) {
 //             _save(entityType, entities)
 //         })
 // }
-
 
 // function _save(entityType, entities) {
 //     localStorage.setItem(entityType, JSON.stringify(entities))
