@@ -17,8 +17,11 @@ function query(delay = 1200) {
 }
 
 function get(entityId) {
-  return query().then((entities) =>
-    entities.find((entity) => entity._id === entityId)
+  return query().then((entities) => {
+    return entities.find((entity) => {
+      return entity._id === entityId
+    })
+  }
   );
 }
 // function post(newEntity) {

@@ -6,7 +6,7 @@ export const Footer = () => {
   const nav = ['בואו נכיר לעומק', 'תקנון אתר', 'מדניות שימוש', 'הצהרת נגישות', 'צור קשר']
 
   return (
-    <footer className={`${location.pathname === '/results' ? 'full' : ''}`}>
+    <footer className={`${location.pathname.includes('/results') ? 'full' : ''}`}>
       <div className="footer-inner">
         <div className="logo-container">
           <img src={logo} alt="" />
