@@ -1,13 +1,12 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
 import routes from './routes.js'
 
-import './assets/styles/main.scss';
-import { Footer } from './cmps/results/footer';
-
+import './assets/styles/main.scss'
+import { Footer } from './cmps/footer'
 
 function App() {
   const location = useLocation()
-  console.log(location);
+  console.log(location)
   return (
     <div className="App" style={{ backgroundColor: location.pathname === '/' ? '#48966c' : '' }}>
       <Routes>
@@ -15,9 +14,9 @@ function App() {
           <Route key={idx} path={route.path} element={<route.component />} />
         ))}
       </Routes>
-      <Footer isFull={true} />
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
