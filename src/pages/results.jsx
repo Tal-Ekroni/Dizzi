@@ -9,7 +9,10 @@ export const Results = () => {
   const [cars, setCars] = useState([])
 
   useEffect(() => {
-    carService.query().then((cars) => setCars(cars.splice(0, 4)))
+    carService.query().then((cars) => {
+      const carCopy = [...cars]
+      setCars(carCopy.splice(0, 4))
+    })
   }, [])
 
   return (
