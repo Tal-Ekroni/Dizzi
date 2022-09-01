@@ -7,12 +7,14 @@ export const carService = {
     remove,
 }
 
+const key = 'cars'
+
 
 function query() {
-    return storageService.query()
+    return storageService.query(key)
 }
 function getById(carId) {
-    return storageService.get(carId)
+    return storageService.get(key, carId)
 }
 function remove(carId) {
     return storageService.remove(carId)

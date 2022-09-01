@@ -6,7 +6,6 @@ import { Footer } from './cmps/footer'
 
 function App() {
   const location = useLocation()
-  console.log(location)
   return (
     <div className="App" style={{ backgroundColor: location.pathname === '/' ? '#48966c' : '' }}>
       <Routes>

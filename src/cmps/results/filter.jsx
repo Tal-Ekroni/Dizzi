@@ -14,7 +14,7 @@ export const Filter = () => {
       <span>מיין לפי:</span>
       <div className="filter-btns-container">
         {filterTypes.map(({ type, title }, idx) => (
-          <button onClick={() => setFilterBy(type)} className={`${type === filterBy ? 'current' : ''}`}>
+          <button key={type} onClick={() => setFilterBy(type)} className={`${type === filterBy ? 'current' : ''}`}>
             {title}
           </button>
         ))}

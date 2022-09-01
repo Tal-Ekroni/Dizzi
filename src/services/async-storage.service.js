@@ -8,16 +8,21 @@ export const storageService = {
   // postMany
 };
 
-function query(delay = 1200) {
+function query(entityType, delay = 1200) {
+  let cars = JSON.parse(localStorage.getItem(entityType))
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(data);
+      if (!cars) {
+        cars = data
+        _save(entityType, cars)
+      }
+      resolve(cars);
     }, delay);
   });
 }
 
-function get(entityId) {
-  return query().then((entities) => {
+function get(entityType, entityId) {
+  return query(entityType).then((entities) => {
     return entities.find((entity) => {
       return entity._id === entityId
     })
@@ -53,9 +58,9 @@ function get(entityId) {
 //         })
 // }
 
-// function _save(entityType, entities) {
-//     localStorage.setItem(entityType, JSON.stringify(entities))
-// }
+function _save(entityType, entities) {
+  localStorage.setItem(entityType, JSON.stringify(entities))
+}
 
 // function _makeId(length = 5) {
 //     var text = ''
