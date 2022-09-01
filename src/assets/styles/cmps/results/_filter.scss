@@ -1,0 +1,39 @@
+.results {
+    .filter-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 3rem;
+
+        span {
+            color: $clr1;
+            font-size: 2rem;
+        }
+
+        .filter-btns-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            
+            & > * {
+                border: 0;
+                height: 40px;
+                color: #fff;
+                background-color: $clr2;
+                width: 160px;
+                border-radius: 2rem;
+                font-size: 1.4rem;
+                transition: all 0.3s;
+
+                &:not(.current):hover {
+                    background-color: darken($color: $clr2, $amount: 10);
+                }
+
+                &.current {
+                    background-color: $clr1;
+                }
+            }
+        }
+    }
+}
