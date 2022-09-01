@@ -13,6 +13,7 @@
 
 // Views
 @import "views/results";
+@import "views/car-details";
 @import "views/questionnaire.scss";
 
 // Components
@@ -25,6 +26,7 @@
 @import "cmps/gender-pick.scss"; 
 @import "cmps/type-pick.scss"; 
 @import "cmps/home-page.scss"; 
+@import "cmps/results/filter.scss"; 
 
 
 
