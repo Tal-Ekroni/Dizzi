@@ -1,7 +1,6 @@
-export default function GenderPick({ questionnaire, setQuestionnaire, setPage }) {
+export default function GenderPick({ questionnaire, setQuestionnaire, currentSection, setCurrentSection }) {
     const onChooseOption = (gender) => {
-        console.log(questionnaire);
-        setQuestionnaire({ ...questionnaire, gender }, setPage(2))
+        setQuestionnaire({ ...questionnaire, gender }, setCurrentSection('BudgetPick'))
     }
     return (
         <div className="gender-pick flex justify-center align-center column">

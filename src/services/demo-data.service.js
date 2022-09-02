@@ -453,25 +453,49 @@ export const data = [
   // },
 ];
 
-export const questionnaireOptions = {
-  carTypes: [
-    "executive",
-    "family",
-    "mini",
-    "crossover",
-    "pick-up",
-    "sports",
-    "prestige",
-    "minivan",
-  ],
-  carFeatures: [
-    "safety",
-    "performance",
-    "gasUsage",
-    "accessories",
-    "space",
-    "trunkj",
-    "נוחות",
-    "רכב גבוה",
-  ],
-};
+export const questionnaireDynamicCmps = {
+    CarType: {
+        cmpClassName: "type-pick",
+        containerClassName: "types-container",
+        header: "איזה סוג רכב אתה מעדיף?",
+        subHeader: "*ניתן לבחור יותר מסוג אחד",
+        data: ["מנהלים", "משפחתי", "קטן", "פנאי ושטח", "מסחרי", "ספורט", "יוקרה", "מיניואן"],
+        stateName: "carTypes",
+        isLimitedPicks: false,
+        nextSection: "FeaturesPick"
+    },
+    FeaturesPick: {
+        cmpClassName: "features-pick",
+        containerClassName: "features-container",
+        header: "מה חשוב לך ברכב?",
+        subHeader: "ניתן לבחור עד 3 מאפיינים",
+        data: ['בטיחות', 'ביצועים', 'חיסכון בדלק', 'אבזור', 'מרחב', 'תא מטען גדול', 'נוחות', 'רכב גבוה'],
+        stateName: "threeImportantFeaturs",
+        isLimitedPicks: true,
+        nextSection: "AccessoriesPick",
+    },
+    AccessoriesPick: {
+        cmpClassName: "accessories-pick",
+        containerClassName: "accessories-container",
+        header: "מה מהדברים הבאים חשובים לך מבחינת אבזור?",
+        subHeader: false,
+        data: ['גלגלי מגנזיום', 'מערכת מולטימדיה', 'CAR PLAY', 'גג פנורמי/נפתח', 'ריפודי עור', 'לוח מחוונים דיגטלי', 'כניסה והנעה ללא מפתח', 'בלם יד חשמלי'],
+        stateName: "importantAccessories",
+        isLimitedPicks: false,
+        nextSection: "LuggagePick",
+    },
+    LuggagePick: {
+        cmpClassName: "luggage-pick",
+        containerClassName: "luggage-container",
+        header: "סמן את הדברים שתרצה להכניס לרכב",
+        subHeader: "*ניתן לבחור יותר מפריט אחד",
+        data: ['עגלת תינוק', 'כיסא תינוק', 'קניות', 'נוסעים מרובים', 'ציוד קמפינג', 'מזוודה', 'עוד משהו?', 'עוד משהו?'],
+        stateName: "luggageTypes",
+        isLimitedPicks: false,
+        nextSection: "GearboxPick",
+    }
+}
+
+
+
+

@@ -1,11 +1,10 @@
-export default function HomePage({setPage}) {
-   
+export default function HomePage({setCurrentSection}) {
     return (
     <div className="home-page">
     ברוכים הבאים!
     <p>תתחילו למלא כבר כפרה עליכם</p>
 
-        <button onClick={()=>{setPage(1)}}>תקדם</button>
+        <button onClick={()=>{setCurrentSection('GenderPick')}}>תקדם</button>
     </div>
     )
 }
