@@ -18,10 +18,9 @@ function getById(carId) {
     return storageService.get(key, carId)
 }
 function remove(carId) {
-    return storageService.remove(carId)
+    return storageService.remove(key, carId)
 }
 function save(car) {
-    console.log(car);
     if (car._id) {
         return storageService.put(key, car)
     } else {

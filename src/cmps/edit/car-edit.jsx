@@ -37,9 +37,10 @@ export const CarEdit = () => {
     carService.save(car)
   }
 
-  //   const onDeleteCar = () => {
-  //     carService.remove(car._id)
-  //   }
+  const onDeleteCar = () => {
+    carService.remove(car._id)
+    navigate('/results')
+  }
 
   return (
     <section className="car-edit-container">
@@ -55,7 +56,9 @@ export const CarEdit = () => {
           })}
         <div className="form-btns-container">
           <button type="submit">שמור</button>
-          <button type="button">מחק מכונית</button>
+          <button type="button" onClick={() => onDeleteCar()}>
+            מחק מכונית
+          </button>
         </div>
       </form>
     </section>

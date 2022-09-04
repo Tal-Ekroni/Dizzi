@@ -13,7 +13,8 @@ export const Results = () => {
   useEffect(() => {
     carService.query().then((cars) => {
       const carCopy = [...cars]
-      setCars(carCopy.splice(0, 4))
+      // setCars(carCopy.splice(0, 4))
+      setCars(carCopy)
     })
   }, [])
 
