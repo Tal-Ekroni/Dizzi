@@ -34,12 +34,14 @@ export const CarEdit = () => {
 
   const onSaveCar = (ev) => {
     ev.preventDefault()
-    carService.save(car)
+    carService.save(car).then((updatedCar) => {
+      setCar(updatedCar)
+      if (!params.carId) navigate(`${updatedCar._id}`)
+    })
   }
 
   const onDeleteCar = () => {
-    carService.remove(car._id)
-    navigate('/results')
+    carService.remove(car._id).then(() => navigate('/results'))
   }
 
   return (
