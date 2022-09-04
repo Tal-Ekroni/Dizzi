@@ -11,12 +11,14 @@ export const CarEdit = () => {
 
   useEffect(() => {
     const { carId } = params
-    if (!carId) navigate('/')
-
-    carService.getById(carId).then((carToEdit) => {
-      if (!carToEdit) navigate('/')
-      setCar(carToEdit)
-    })
+    if (carId) {
+      carService.getById(carId).then((carToEdit) => {
+        if (!carToEdit) navigate('/')
+        setCar(carToEdit)
+      })
+    } else {
+      setCar(carService.getEmptyCar())
+    }
   }, [])
 
   const handleChange = (ev) => {
@@ -34,6 +36,10 @@ export const CarEdit = () => {
     ev.preventDefault()
     carService.save(car)
   }
+
+  //   const onDeleteCar = () => {
+  //     carService.remove(car._id)
+  //   }
 
   return (
     <section className="car-edit-container">

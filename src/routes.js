@@ -17,6 +17,10 @@ export default [
     component: CarDetails,
   },
   {
+    path: "/edit",
+    component: CarEdit,
+  },
+  {
     path: "/edit/:carId",
     component: CarEdit,
   },
