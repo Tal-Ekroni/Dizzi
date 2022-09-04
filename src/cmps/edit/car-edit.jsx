@@ -30,9 +30,14 @@ export const CarEdit = () => {
     setCar((prevState) => ({ ...prevState, features: { ...prevState.features, [field]: !prevState.features[field] } }))
   }
 
+  const onSaveCar = (ev) => {
+    ev.preventDefault()
+    carService.save(car)
+  }
+
   return (
     <section className="car-edit-container">
-      <form>
+      <form onSubmit={onSaveCar}>
         {car &&
           carEditFields.map((field) => {
             return (
@@ -42,6 +47,10 @@ export const CarEdit = () => {
               </div>
             )
           })}
+        <div className="form-btns-container">
+          <button type="submit">שמור</button>
+          <button type="button">מחק מכונית</button>
+        </div>
       </form>
     </section>
   )

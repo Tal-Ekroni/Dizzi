@@ -3,11 +3,9 @@ export const DynamicInput = ({ field, handleChange, handleFeatureChange, car }) 
   switch (field.type) {
     case 'dropdown':
       return (
-        <select {...props}>
+        <select {...props} value={car[field.name]}>
           {field.options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.he}
-            </option>
+            <option key={option.value}>{option.he}</option>
           ))}
         </select>
       )

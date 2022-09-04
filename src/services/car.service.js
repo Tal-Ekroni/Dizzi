@@ -21,9 +21,9 @@ function remove(carId) {
 }
 function save(car) {
     if (car._id) {
-        return storageService.put(car)
+        return storageService.put(key, car)
     } else {
-        return storageService.post(car)
+        return storageService.post(key, car)
     }
 }
 
