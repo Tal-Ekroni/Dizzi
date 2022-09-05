@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router-dom'
 import logo from '../assets/img/logo-demo.JPG'
 
 export const AppHeader = () => {
+  const navigate = useNavigate()
+
   return (
     <section className="app-header-container">
       <div className="vendor-cta">
@@ -12,13 +15,13 @@ export const AppHeader = () => {
         <nav>
           <ul>
             <li>
-              <button>⇨ חזור</button>
+              <button onClick={() => navigate(-1)}>⇨ חזור</button>
             </li>
             <li>
-              <img src={logo} alt="website logo" />
+              <img onClick={() => navigate('/')} src={logo} alt="website logo" />
             </li>
             <li>
-              <button>חיפוש חדש</button>
+              <button onClick={() => navigate('/')}>חיפוש חדש</button>
             </li>
           </ul>
         </nav>
