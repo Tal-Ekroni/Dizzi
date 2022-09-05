@@ -2,7 +2,7 @@ import logo from '../assets/img/logo-demo.JPG'
 
 export const AppHeader = () => {
   return (
-    <section className="app-header">
+    <section className="app-header-container">
       <div className="vendor-cta">
         <p>
           מוכרים רכבים חדשים? <span>הצטרפו עכשיו לדיזי</span>
@@ -12,7 +12,7 @@ export const AppHeader = () => {
         <nav>
           <ul>
             <li>
-              <button>חזור</button>
+              <button>⇨ חזור</button>
             </li>
             <li>
               <img src={logo} alt="website logo" />
