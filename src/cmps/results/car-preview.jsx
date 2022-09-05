@@ -47,8 +47,9 @@ export const CarPreview = ({ car, isBestMatch }) => {
         <h3 className="price ltr">{carPriceFormat(car.price) + '₪'}</h3>
       </div>
       <div className="btns-container">
-        <button onClick={() => navigate(`${car._id}`)}>רכב זה מעניין אותי</button>
-        <button>למפרט המלא</button>
+        <button>רכב זה מעניין אותי</button>
+        <button onClick={() => navigate(`${car._id}`)}>למפרט המלא</button>
+        <button onClick={() => navigate(`/edit/${car._id}`)}>ערוך מכונית</button>
       </div>
     </article>
   )

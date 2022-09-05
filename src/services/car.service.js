@@ -5,23 +5,52 @@ export const carService = {
     getById,
     save,
     remove,
+    getEmptyCar
 }
+
+const key = 'cars'
 
 
 function query() {
-    return storageService.query()
+    return storageService.query(key)
 }
 function getById(carId) {
-    return storageService.get(carId)
+    return storageService.get(key, carId)
 }
 function remove(carId) {
-    return storageService.remove(carId)
+    return storageService.remove(key, carId)
 }
 function save(car) {
     if (car._id) {
-        return storageService.put(car)
+        return storageService.put(key, car)
     } else {
-        return storageService.post(car)
+        return storageService.post(key, car)
+    }
+}
+
+function getEmptyCar() {
+    return {
+        manufacturer: 'טויוטה',
+        model: 'יאריס',
+        type: 'מיני',
+        price: 0,
+        height: 0,
+        trunk: 0,
+        horsePower: 0,
+        isGearAuto: false,
+        safety: 1,
+        isElectric: false,
+        features: {
+            isMagnezioumWheels: false,
+            isPanoramicRoof: false,
+            isMultimediaSystem: false,
+            isCarPlay: false,
+            isLeatherCovers: false,
+            isDigitalClocks: false,
+            isStartButton: false,
+            isElectricHandBreaks: false
+        }
+
     }
 }
 
