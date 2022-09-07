@@ -48,7 +48,7 @@ export const CarPreview = ({ car, isBestMatch }) => {
       </div>
       <div className="btns-container">
         <button>רכב זה מעניין אותי</button>
-        <button onClick={() => navigate(`${car._id}`)}>למפרט המלא</button>
+        <button onClick={() => navigate(`/car/${car._id}`)}>למפרט המלא</button>
         <button onClick={() => navigate(`/edit/${car._id}`)}>ערוך מכונית</button>
       </div>
     </article>

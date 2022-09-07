@@ -13,7 +13,7 @@ export default [
     component: Results,
   },
   {
-    path: "/results/:carId",
+    path: "/car/:carId",
     component: CarDetails,
   },
   {
