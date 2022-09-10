@@ -1,68 +1,70 @@
 /* Breakpoint mixins */
 
 @mixin for-mobile-layout {
-    @media (max-width: $mobile-breakpoint) {
-        @content;
-    }
+  @media (max-width: $mobile-breakpoint) {
+    @content;
+  }
 }
 
 @mixin for-narrow-layout {
-    @media (min-width: $mobile-breakpoint) {
-        @content;
-    }
+  @media (min-width: $mobile-breakpoint) {
+    @content;
+  }
 }
 
 @mixin for-normal-layout {
-    @media (min-width: $narrow-breakpoint) {
-        @content;
-    }
+  @media (min-width: $narrow-breakpoint) {
+    @content;
+  }
 }
 
 @mixin for-wide-layout {
-    @media (min-width: $normal-breakpoint) {
-        @content;
-    }
+  @media (min-width: $normal-breakpoint) {
+    @content;
+  }
 }
 
 /* Media  Mixins */
 @mixin aspect-ratio($width, $height) {
-    position: relative;
-    overflow: hidden;
-    &::before {
-      display: block;
-      content: "";
-      width: 100%;
-      padding-top: calc(($height / $width) * 100%);
-    }
-    > * {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-  
-    > img {
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  
-  // Mixin for removing hover efects on iphone screen
-  @mixin hover-supported {    
-    @media not all and (pointer: coarse) {
-        &:hover {
-            @content;
-        }
-    }
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc(($height / $width) * 100%);
   }
 
-  @mixin questionnaireCenter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  >* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
+
+  >img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
+  @media not all and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin questionnaireCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
   @mixin green-back-white-text-btn {
     background-color: $clr1;
@@ -82,3 +84,16 @@
       background-color: darken($clr1, 8);
     }
   }
+
+@mixin questionnaireSimpleButton {
+  width: 150px;
+  margin-top: 2em;
+  font-size: 1.5em;
+  height: 1.5em;
+  border: none;
+  border-radius: 28px;
+  z-index: 2;
+  background-color: white;
+  color: $clr1;
+  font-family: FbOgen-bold;
+}

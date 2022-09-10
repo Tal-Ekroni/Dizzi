@@ -1,4 +1,59 @@
-.questionnaire{
-background-color: $clr1;
-height: calc(100vh - 200px);
+.questionnaire {
+    background-color: $clr1;
+    height: calc(100vh - 200px);
+}
+
+.type-pick,
+.luggage-pick,
+.features-pick,
+.accessories-pick {
+    padding-top: 10vh;
+    color: white;
+    font-family: FbOgen;
+    @include questionnaireCenter;
+
+    & h1 {
+        font-weight: 100;
+    }
+
+    & small {
+        font-size: 0.8em;
+        font-weight: lighter;
+        height: 23px;
+    }
+
+    & button {
+        margin-top: 4em;
+        @include questionnaireSimpleButton;
+    }
+}
+
+.types-container,
+.luggage-container,
+.features-container,
+.accessories-container {
+    padding-top: 5vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+
+    & .questionnaire--dynamic-options {
+        background-color: white;
+        color: $clr1;
+        width: 150px;
+        height: 65px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    & .questionnaire--dynamic-options:hover {
+        cursor: pointer;
+    }
+
+    & .questionnaire--dynamic-options.picked {
+        background-color: $clr2;
+        color: white;
+    }
 }
