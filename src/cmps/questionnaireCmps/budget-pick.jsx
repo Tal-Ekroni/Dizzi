@@ -5,7 +5,6 @@ export default function BudgetPick({ questionnaire, setQuestionnaire, currentSec
     }
     return (
         <div className="budget-pick">
-
             <label className="switch">
                 תשלום מלא או חודשי חביבי
                 <input type="checkbox" defaultChecked={questionnaire.isFullPayment} onChange={onChooseOption} />
