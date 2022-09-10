@@ -1,4 +1,4 @@
-export const carEditFields = [
+export const mainCarFields = [
     {
         name: 'manufacturer',
         type: 'dropdown',
@@ -26,7 +26,7 @@ export const carEditFields = [
         ]
     },
     {
-        name: 'type',
+        name: 'category',
         type: 'dropdown',
         label: {
             he: 'סוג'
@@ -49,50 +49,33 @@ export const carEditFields = [
             he: 'מחיר'
         }
     },
+    // {
+    //     name: 'height',
+    //     type: 'number',
+    //     label: {
+    //         he: 'גובה'
+    //     }
+    // },
+    // {
+    //     name: 'trunk',
+    //     type: 'number',
+    //     label: {
+    //         he: 'תא מטען'
+    //     }
+    // },
+
+
+
+
+]
+
+export const subModelFields = [
     {
-        name: 'height',
-        type: 'number',
-        label: {
-            he: 'גובה'
+        name: 'name',
+        type: 'text',
+        placeholder: {
+            he: 'שם תת דגם'
         }
-    },
-    {
-        name: 'trunk',
-        type: 'number',
-        label: {
-            he: 'תא מטען'
-        }
-    },
-    {
-        name: 'motor',
-        type: 'dropdown',
-        label: {
-            he: 'נפח מנוע'
-        },
-        options: [
-            { value: '1.6', he: '1.6' },
-            { value: '1', he: '1' },
-            { value: '2', he: '2' },
-            { value: '1.8', he: '1.8' },
-        ]
-    },
-    {
-        name: 'horsePower',
-        type: 'number',
-        label: {
-            he: 'כוח סוס'
-        }
-    },
-    {
-        name: 'isGearAuto',
-        type: 'boolean',
-        label: {
-            he: 'גיר'
-        },
-        options: [
-            { value: true, he: 'אוטומט' },
-            { value: false, he: 'ידני' },
-        ]
     },
     {
         name: 'safety',
@@ -103,15 +86,116 @@ export const carEditFields = [
         range: { min: 1, max: 8 }
     },
     {
-        name: 'isElectric',
-        type: 'boolean',
-        label: {
-            he: 'סוג מנוע'
+        name: 'motorType',
+        heading: {
+            he: 'מנוע'
+        },
+        type: 'dropdown',
+        placeholder: {
+            he: 'סוג'
         },
         options: [
-            { value: true, he: 'חשמלי' },
-            { value: false, he: 'רגיל' },
+            { value: 'electric', he: 'חשמלי' },
+            { value: 'hybrid', he: 'היברידי' },
+            { value: 'regular', he: 'רגיל' },
         ]
+    },
+    {
+        name: 'volume',
+        type: 'number',
+        label: {
+            he: 'נפח מנוע'
+        },
+        placeholder: {
+            he: 'נפח מנוע[סמ"ק]'
+        }
+    },
+    {
+        name: 'horsePower',
+        type: 'number',
+        label: {
+            he: 'כוח סוס'
+        },
+        placeholder: {
+            he: 'הספק[כ"ס/סל"ד]'
+        }
+    },
+    {
+        name: 'momentum',
+        type: 'number',
+        label: {
+            he: 'מומנטום'
+        },
+        placeholder: {
+            he: 'מומנט[קג"מ/סל"ד]'
+        }
+    },
+    {
+        name: 'isAutoGear',
+        type: 'boolean',
+        label: {
+            he: 'תיבת הילוכים'
+        },
+        options: [
+            { value: true, he: 'אוטומט' },
+            { value: false, he: 'ידני' },
+        ]
+    },
+    {
+        name: 'breakesSystem',
+        type: 'text',
+        heading: {
+            he: 'בלמים'
+        },
+        label: {
+            he: 'מערכת בלמים'
+        },
+        placeholder: {
+            he: 'מערכת בלמים'
+        }
+    },
+    {
+        name: 'breakesFront',
+        type: 'text',
+        label: {
+            he: 'בלם קדמי'
+        },
+        placeholder: {
+            he: 'בלם קדמי'
+        }
+    },
+    {
+        name: 'breakesBack',
+        type: 'text',
+        label: {
+            he: 'בלם אחורי'
+        },
+        placeholder: {
+            he: 'בלם אחורי'
+        }
+    },
+    {
+        name: 'suspensionsFront',
+        type: 'text',
+        haeding: {
+            he: 'מתלים'
+        },
+        label: {
+            he: 'מתלה קדמי'
+        },
+        placeholder: {
+            he: 'מתלה קדמי'
+        }
+    },
+    {
+        name: 'suspensionsBack',
+        type: 'text',
+        label: {
+            he: 'מתלה אחורי'
+        },
+        placeholder: {
+            he: 'מתלה אחורי'
+        }
     },
     {
         name: 'features',
@@ -130,4 +214,5 @@ export const carEditFields = [
             { value: 'isElectricHandBreaks', he: 'בלם יד חשמלי' },
         ]
     }
+
 ]

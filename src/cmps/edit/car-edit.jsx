@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { carService } from '../../services/car.service'
-import { carEditFields } from '../../consts/form-fields'
-import { DynamicInput } from './dynamic-input'
+import { MainCarForm } from './forms/main-car-fields'
+import { SubModelForm } from './forms/sub-model-fields'
+import { SubModelList } from './sub-model-list'
 
 export const CarEdit = () => {
   const params = useParams()
   const navigate = useNavigate()
   const [car, setCar] = useState(null)
+  const [currentSubModel, setCurrentSubModel] = useState(null)
 
   useEffect(() => {
     const { carId } = params
@@ -15,9 +17,12 @@ export const CarEdit = () => {
       carService.getById(carId).then((carToEdit) => {
         if (!carToEdit) navigate('/')
         setCar(carToEdit)
+        setCurrentSubModel(carToEdit.subModels[0])
       })
     } else {
-      setCar(carService.getEmptyCar())
+      const newCar = carService.getEmptyCar()
+      setCar(newCar)
+      setCurrentSubModel(newCar.subModels[0])
     }
   }, [])
 
@@ -46,23 +51,15 @@ export const CarEdit = () => {
 
   return (
     <section className="car-edit-container">
-      <form onSubmit={onSaveCar}>
-        {car &&
-          carEditFields.map((field) => {
-            return (
-              <div key={field.name} className="field-container">
-                <label htmlFor={field.name}>{field.label.he}</label>
-                <DynamicInput field={field} handleChange={handleChange} handleFeatureChange={handleFeatureChange} car={car} />
-              </div>
-            )
-          })}
-        <div className="form-btns-container">
-          <button type="submit">שמור</button>
-          <button type="button" onClick={() => onDeleteCar()}>
-            מחק מכונית
-          </button>
-        </div>
-      </form>
+      {car && (
+        <>
+          <MainCarForm car={car} onHandleChange={handleChange} onSaveCar={onSaveCar} onDeleteCar={onDeleteCar} />
+          <section className="sub-models-container">
+            <SubModelList subModels={car.subModels} />
+            <SubModelForm subModel={currentSubModel} onHandleChange={handleChange} onSaveCar={onSaveCar} onDeleteCar={onDeleteCar} />
+          </section>
+        </>
+      )}
     </section>
   )
 }

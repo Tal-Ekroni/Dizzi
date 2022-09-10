@@ -9,6 +9,7 @@ import { utilService } from '../../services/util.service'
 export const CarPreview = ({ car, isBestMatch }) => {
   const cars = [car1, car2, car3]
   const navigate = useNavigate()
+  console.log(car)
 
   const getRandCarImg = () => {
     return cars[utilService.getRandomIntInclusive(0, cars.length - 1)]

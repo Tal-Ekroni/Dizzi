@@ -30,27 +30,50 @@ function save(car) {
 
 function getEmptyCar() {
     return {
-        manufacturer: 'טויוטה',
-        model: 'יאריס',
-        type: 'מיני',
+        _id: "test",
+        manufacturer: "",
+        model: "",
+        year: "2022",
+        category: "",
         price: 0,
-        height: 0,
-        trunk: 0,
-        horsePower: 0,
-        isGearAuto: false,
-        safety: 1,
-        isElectric: false,
-        features: {
-            isMagnezioumWheels: false,
-            isPanoramicRoof: false,
-            isMultimediaSystem: false,
-            isCarPlay: false,
-            isLeatherCovers: false,
-            isDigitalClocks: false,
-            isStartButton: false,
-            isElectricHandBreaks: false
-        }
-
+        subModels: [
+            {
+                name: "",
+                safety: 7,
+                motor: {
+                    type: "",
+                    volume: 0,
+                    horsePower: 0,
+                    momentum: 0,
+                    isAutoGear: false,
+                },
+                breaks: {
+                    system: "",
+                    front: "",
+                    back: "",
+                },
+                suspensions: {
+                    fron: "",
+                    back: "",
+                },
+                measurments: {
+                    height: 0,
+                    width: 0,
+                    trunk: 0,
+                    clearance: 0,
+                },
+                features: {
+                    isMagnezioumWheels: false,
+                    isPanoramicRoof: false,
+                    isMultimediaSystem: false,
+                    isCarPlay: false,
+                    isLeatherCovers: false,
+                    isDigitalClocks: false,
+                    isStartButton: false,
+                    isElectricHandBreaks: false,
+                },
+            }
+        ],
     }
 }
 
