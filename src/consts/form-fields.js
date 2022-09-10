@@ -177,7 +177,7 @@ export const subModelFields = [
     {
         name: 'suspensionsFront',
         type: 'text',
-        haeding: {
+        heading: {
             he: 'מתלים'
         },
         label: {
