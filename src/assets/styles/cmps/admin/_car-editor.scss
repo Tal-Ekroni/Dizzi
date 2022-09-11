@@ -55,4 +55,29 @@
             }
         }
     }
+
+    .sub-models-container {
+        display: grid;
+        grid-template-columns: 0.8fr 5fr;
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    .sub-model-list-container {
+        border-inline-end: 2px solid rgb(245, 244, 244);
+        font-size: 1.4rem;
+
+        .sub-model-list {
+            & > *{
+                padding: 0.3rem;
+                cursor: pointer;
+                transition: all 0.3s;
+
+                &:hover {
+                    background-color: $clr2;
+                    color: #fff;
+                }
+            }        
+        }
+    }
 }
