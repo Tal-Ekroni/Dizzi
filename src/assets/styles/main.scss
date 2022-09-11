@@ -19,14 +19,9 @@
 
 // Components
 @import "cmps/app-footer";
-@import "cmps/budget-pick.scss";
-@import "cmps/features-pick.scss";
-@import "cmps/gearbox-pick.scss";
-@import "cmps/accessories-pick.scss";
-@import "cmps/luggage-pick.scss";
-@import "cmps/gender-pick.scss"; 
-@import "cmps/type-pick.scss"; 
-@import "cmps/home-page.scss"; 
+@import "cmps/questionnaire/budget-pick.scss";
+@import "cmps/questionnaire/_dynamicQuestionnaireCmp.scss";
+@import "cmps/questionnaire/home-page.scss"; 
 @import "cmps/results/filter.scss"; 
 @import "cmps/app-header.scss"; 
 @import "cmps/admin/car-editor"; 
