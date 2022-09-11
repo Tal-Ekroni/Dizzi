@@ -1,1 +1,1 @@
-export const headlessPages = ['results', 'edit']
+export const headlessPages = ['results', 'edit', 'admin']

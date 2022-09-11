@@ -1,7 +1,8 @@
 import { Results } from "./pages/results.jsx";
 import Questionnaire from "./pages/questionnaire.jsx";
 import { CarDetails } from "./cmps/results/car-details.jsx";
-import { CarEdit } from "./cmps/edit/car-edit.jsx";
+import { CarEditor } from "./cmps/admin/edit/car-editor.jsx";
+import { AdminDashboard } from "./pages/admin-dashboard.jsx";
 
 export default [
   {
@@ -17,11 +18,11 @@ export default [
     component: CarDetails,
   },
   {
-    path: "/edit",
-    component: CarEdit,
+    path: "/admin",
+    component: AdminDashboard,
   },
   {
     path: "/edit/:carId",
-    component: CarEdit,
+    component: CarEditor,
   },
 ];
