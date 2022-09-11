@@ -17,12 +17,12 @@ export const links = [
             {
                 text: 'הוספת רכב חדש',
                 icon: '',
-                link: 'cars/edit',
+                link: 'edit',
             },
             {
                 text: 'עדכון רכב קיים',
                 icon: '',
-                link: 'cars',
+                link: 'edit/:carId',
             },
         ],
     },

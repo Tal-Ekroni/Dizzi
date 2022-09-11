@@ -22,9 +22,23 @@ function App() {
     <div className="App" style={{ backgroundColor: location.pathname === '/' ? '#48966c' : '' }}>
       {isShowHeader() && <AppHeader />}
       <Routes>
-        {routes.map((route, idx) => (
-          <Route key={idx} path={route.path} element={<route.component />} />
-        ))}
+        {routes.map((route, idx) => {
+          if (route.routes) {
+            {
+              return (
+                <>
+                  <Route key={idx} path={route.path} element={<route.component />}>
+                    {route.routes.map((innerRoute, innerIdx) => (
+                      <Route key={innerIdx} path={innerRoute.path} element={<innerRoute.component />} />
+                    ))}
+                  </Route>
+                </>
+              )
+            }
+          } else {
+            return <Route key={idx} path={route.path} element={<route.component />} />
+          }
+        })}
       </Routes>
       {isShowFooter() && <Footer />}
     </div>
