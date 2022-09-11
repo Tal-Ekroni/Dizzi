@@ -63,3 +63,22 @@
     align-items: center;
     flex-direction: column;
   }
+
+  @mixin green-back-white-text-btn {
+    background-color: $clr1;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    font-family: FbOgen-black;
+    border-radius: 5rem;
+    font-size: 1.2rem;
+    min-width: 100px;
+    height: 35px;
+    font-weight: 400;
+    padding-inline: 1rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($clr1, 8);
+    }
+  }

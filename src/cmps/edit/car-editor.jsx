@@ -74,6 +74,7 @@ export const CarEdit = () => {
     <section className="car-edit-container">
       {car && (
         <>
+          <h1>{params.carId ? 'ערוך פרטי רכב' : 'הוספת רכב חדש'}</h1>
           <MainCarForm car={car} onHandleChange={handleChange} onSaveCar={onSaveCar} onDeleteCar={onDeleteCar} />
           <section className="sub-models-container">
             <SubModelList subModels={car.subModels} onChangeSubModel={onChangeSubModel} />

@@ -91,7 +91,7 @@ export const subModelFields = [
             he: 'מנוע'
         },
         type: 'dropdown',
-        placeholder: {
+        label: {
             he: 'סוג'
         },
         options: [
@@ -200,7 +200,7 @@ export const subModelFields = [
     {
         name: 'features',
         type: 'multi-check-select',
-        label: {
+        heading: {
             he: 'פיצ\'רים'
         },
         options: [
