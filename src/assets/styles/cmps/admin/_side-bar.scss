@@ -1,13 +1,65 @@
 .side-bar-container {
+
+    background-color: $clr1;
+    color: #fff;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 50px;
+
+    .logo-container, .mini-user-container {
+        margin-inline: auto;
+    }
+
+    .mini-user-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            font-size: 1.4rem;
+        }
+
+        .user-img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        .logout {
+            font-size: 1.1rem;
+            line-height: 0.5;
+            font-family: FbOgen-bold;
+        }
+    }
+
     .nav-list-container {
+        li {
+            padding-inline-start: 10px;
+            cursor: pointer;
+        }
+        .shown {
+            transition: background-color 0.3s;
+            background-color: $clr2;
+            
+        }
         .inner-nav {
             height: 0;
             overflow: hidden;
             transition: height 0.3s;
+            background-color: $clr2;
+            
+            li::before {
+                content: '-';
+                margin-inline-end: 0.2rem;
+            }
             
             &.shown {
-                height: 100%;
+                height: 60px;
             }
+            
         }
     }
 }

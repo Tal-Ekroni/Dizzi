@@ -4,6 +4,7 @@ export const AdminDashboard = () => {
   return (
     <section className="admin-dashboard-container">
       <SideBar />
+      <div className="data"></div>
     </section>
   )
 }

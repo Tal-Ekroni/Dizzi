@@ -19,7 +19,7 @@ export const NavList = () => {
           {navList.map((link, index) => {
             if (link.links) {
               return (
-                <div key={index}>
+                <div className={`${link.isOpen ? 'shown' : ''}`} key={index}>
                   <li onClick={() => openInnerNav(index)}>{link.text}</li>
                   <div className={`inner-nav ${link.isOpen ? 'shown' : ''}`}>
                     {link.links.map((innerLink) => (
