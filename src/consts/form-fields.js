@@ -64,7 +64,7 @@ export const subModelFields = [
     },
     {
         name: 'safety',
-        type: 'range',
+        type: 'number',
         label: {
             he: 'בטיחות'
         },

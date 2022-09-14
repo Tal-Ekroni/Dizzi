@@ -22,11 +22,12 @@ export const CarEditor = () => {
       const newCar = carService.getEmptyCar()
       setCar(newCar)
     }
-  }, [])
+  }, [params])
 
   const handleChange = (ev, isSubModel) => {
     const field = ev.target.id
     const value = isNaN(ev.target.value) || typeof ev.target.value === 'boolean' ? ev.target.value : +ev.target.value
+    if(+ev.target.min > value || +ev.target.max < value) return
     if (isSubModel) {
       const subModels = car.subModels
       const subModel = subModels[currentSubModel]
@@ -60,14 +61,24 @@ export const CarEditor = () => {
   }
 
   const onDeleteSubModel = () => {
-    const subModels = car.subModels
-    subModels.splice(currentSubModel, 1)
-    setCar((prevState) => ({ ...prevState, subModels }))
-    setCurrentSubModel(0)
+    const updatedCar = {...car}
+    updatedCar.subModels.splice(currentSubModel, 1)
+    carService.save(updatedCar).then(car => {
+      setCar(car)
+      setCurrentSubModel(car.subModels.length - 1)
+    })
   }
 
   const onChangeSubModel = (index) => {
     setCurrentSubModel(index)
+  }
+
+  const handleAddSubModel = () => {
+    const updatedCar = {...car}
+    updatedCar.subModels.push(carService.getEmptySubModel())
+    carService.save(updatedCar)
+    .then(carFromDb => setCar(carFromDb))
+    .then(() => setCurrentSubModel(car.subModels.length - 1))
   }
 
   return (
@@ -77,7 +88,10 @@ export const CarEditor = () => {
           <h1>{params.carId ? 'ערוך פרטי רכב' : 'הוספת רכב חדש'}</h1>
           <MainCarForm car={car} onHandleChange={handleChange} onSaveCar={onSaveCar} onDeleteCar={onDeleteCar} />
           <section className="sub-models-container">
-            <SubModelList subModels={car.subModels} onChangeSubModel={onChangeSubModel} />
+            <div className="add-sub-model-container">
+              <button onClick={handleAddSubModel}><span>+</span> הוסף תת דגם</button>
+            </div>
+            <SubModelList subModels={car.subModels} onChangeSubModel={onChangeSubModel} currentSubModel={currentSubModel} />
             <SubModelForm
               subModel={car.subModels[currentSubModel]}
               onHandleChange={(ev) => handleChange(ev, true)}

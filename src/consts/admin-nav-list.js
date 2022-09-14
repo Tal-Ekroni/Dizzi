@@ -22,7 +22,7 @@ export const links = [
             {
                 text: 'עדכון רכב קיים',
                 icon: '',
-                link: 'edit/:carId',
+                link: 'cars',
             },
         ],
     },

@@ -3,6 +3,7 @@ import Questionnaire from "./pages/questionnaire.jsx";
 import { CarDetails } from "./cmps/results/car-details.jsx";
 import { AdminDashboard } from "./pages/admin-dashboard.jsx";
 import { CarEditor } from "./cmps/admin/edit/car-editor.jsx";
+import { CarTableList } from "./cmps/admin/edit/car-table-list.jsx";
 
 export default [
   {
@@ -23,6 +24,7 @@ export default [
     routes: [
       { path: 'notifications', component: AdminDashboard },
       { path: 'quick-look', component: AdminDashboard },
+      { path: 'cars', component: CarTableList },
       { path: 'edit', component: CarEditor },
       { path: 'edit/:carId', component: CarEditor },
       { path: 'statistics', component: AdminDashboard },
