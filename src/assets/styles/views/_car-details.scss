@@ -61,30 +61,6 @@
             margin-bottom: 0.5rem;
         }
 
-        table {
-            min-width: 700px;
-            border-collapse: collapse;
-            font-size: 1.3rem;
-
-            thead {
-                background-color: #dcf9e9;
-                font-family: FbOgen-black;
-            }
-
-            tr {
-                height: 40px;
-            }
-            
-            tr:nth-child(even) {
-                background-color: #dcf9e9;
-                
-            }
-            
-            td:nth-child(1), th:nth-child(1) {
-                text-align: start;
-                padding-inline-start: 1rem;
-                padding-block: 0.4rem;
-            }
-        }
+        @include table-primary;
     }
 }

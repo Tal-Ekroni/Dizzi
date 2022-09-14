@@ -86,14 +86,11 @@ footer {
         grid-area: new-search;
         align-self: center;
         justify-self: center;
-        border: 0;
-        background-color: #fff;
-        color: $clr1;
+        @include btn-secondary;
         font-family: FbOgen-black;
         font-size: 1.4rem;
         width: 130px;
         height: 30px;
-        border-radius: 1rem;
         display: none;
     }
 

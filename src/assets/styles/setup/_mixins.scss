@@ -31,12 +31,12 @@
 
   &::before {
     display: block;
-    content: "";
+    content: '';
     width: 100%;
     padding-top: calc(($height / $width) * 100%);
   }
 
-  >* {
+  > * {
     position: absolute;
     top: 0;
     left: 0;
@@ -44,7 +44,7 @@
     bottom: 0;
   }
 
-  >img {
+  > img {
     height: 100%;
     object-fit: cover;
   }
@@ -66,24 +66,24 @@
   flex-direction: column;
 }
 
-  @mixin green-back-white-text-btn {
-    background-color: $clr1;
-    color: #fff;
-    border: 0;
-    outline: 0;
-    font-family: FbOgen-black;
-    border-radius: 5rem;
-    font-size: 1.2rem;
-    min-width: 100px;
-    height: 35px;
-    font-weight: 400;
-    padding-inline: 1rem;
-    transition: background-color 0.3s;
+@mixin green-back-white-text-btn {
+  background-color: $clr1;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  font-family: FbOgen-black;
+  border-radius: 5rem;
+  font-size: 1.2rem;
+  min-width: 100px;
+  height: 35px;
+  font-weight: 400;
+  padding-inline: 1rem;
+  transition: background-color 0.3s;
 
-    &:hover {
-      background-color: darken($clr1, 8);
-    }
+  &:hover {
+    background-color: darken($clr1, 8);
   }
+}
 
 @mixin questionnaireSimpleButton {
   width: 150px;
@@ -96,4 +96,48 @@
   background-color: white;
   color: $clr1;
   font-family: FbOgen-bold;
+}
+
+@mixin table-primary {
+  table {
+    min-width: 700px;
+    border-collapse: collapse;
+    font-size: 1.3rem;
+
+    thead {
+      background-color: #dcf9e9;
+      font-family: FbOgen-black;
+    }
+
+    tr {
+      height: 40px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dcf9e9;
+    }
+
+    td:nth-child(1),
+    th:nth-child(1) {
+      text-align: start;
+      padding-inline-start: 1rem;
+      padding-block: 0.4rem;
+    }
+  }
+}
+
+@mixin btn-primary {
+  background-color: $clr1;
+  color: #fff;
+  border-radius: 20px;
+  border: 0;
+}
+
+@mixin btn-secondary {
+  background-color: #fff;
+  color: $clr1;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  border: 0;
+  outline: 0;
 }
