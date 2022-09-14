@@ -15,11 +15,21 @@
 @import "views/results";
 @import "views/car-details";
 @import "views/questionnaire.scss";
+@import "views/admin-dashboard.scss";
 
 // Components
 @import "cmps/app-footer";
 @import "cmps/questionnaire/budget-pick.scss";
-@import "cmps/questionnaire/dynamicQuestionnaireCmp.scss";
-@import "cmps/questionnaire/home-page.scss";
-@import "cmps/results/filter.scss";
-@import "cmps/app-header.scss";
+@import "cmps/questionnaire/_dynamicQuestionnaireCmp.scss";
+@import "cmps/questionnaire/home-page.scss"; 
+@import "cmps/results/filter.scss"; 
+@import "cmps/app-header.scss"; 
+@import "cmps/admin/car-editor"; 
+@import "cmps/admin/side-bar"; 
+@import "cmps/logo"; 
+
+
+
+
+
+

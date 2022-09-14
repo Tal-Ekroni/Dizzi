@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { carService } from '../../services/car.service'
+import { carService } from '../../../services/car.service'
 import { MainCarForm } from './forms/main-car-fields'
 import { SubModelForm } from './forms/sub-model-fields'
 import { SubModelList } from './sub-model-list'
 
-export const CarEdit = () => {
+export const CarEditor = () => {
   const params = useParams()
   const navigate = useNavigate()
   const [car, setCar] = useState(null)

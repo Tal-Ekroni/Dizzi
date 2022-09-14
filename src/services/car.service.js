@@ -30,7 +30,6 @@ function save(car) {
 
 function getEmptyCar() {
     return {
-        _id: "test",
         manufacturer: "",
         model: "",
         year: "2022",
