@@ -1,6 +1,6 @@
 .gearbox-pick,
 .gender-pick {
-  padding-top: 10vh;
+  padding-top: 7vh;
   font-family: FbOgen;
   color: white;
   @include questionnaireCenter;
@@ -39,7 +39,7 @@
 .luggage-pick,
 .features-pick,
 .accessories-pick {
-  padding-top: 10vh;
+  padding-top: 7vh;
   color: white;
   font-family: FbOgen;
   @include questionnaireCenter;
@@ -63,6 +63,17 @@
     gap: 20px;
     button {
       width: 200px;
+    }
+  }
+  @media (max-width: 700px) {
+    text-align: center;
+    padding-top: 1vh;
+    .next-section-btns {
+      button {
+        width: 170px;
+        font-size: 1em;
+        margin-top: 3em;
+      }
     }
   }
 }
@@ -95,7 +106,6 @@
     span {
       margin-top: 0.5em;
       font-size: 0.8rem;
-
     }
   }
 
@@ -106,5 +116,11 @@
   & .questionnaire--dynamic-options.picked {
     background-color: $clr2;
     color: white;
+  }
+  @media (max-width: 700px) {
+    z-index: 3;
+    grid-template-columns: auto auto;
+    text-align: center;
+    padding-top: 5vh;
   }
 }

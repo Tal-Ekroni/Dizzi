@@ -34,4 +34,16 @@
     width: 55%;
     z-index: 3;
   }
+  @media (max-width: 700px) {
+    padding: 0 15px;
+    text-align: center;
+    .homepage-car {
+      margin-top: 1em;
+      width: 75%;
+    }
+    button {
+      @include questionnaireSimpleButtonMobile;
+      margin: 1em;
+    }
+  }
 }

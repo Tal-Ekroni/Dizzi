@@ -98,6 +98,19 @@
   font-family: FbOgen-bold;
 }
 
+@mixin questionnaireSimpleButtonMobile {
+  width: 150px;
+  margin-top: 2em;
+  font-size: 1em;
+  height: 1.5em;
+  border: none;
+  border-radius: 28px;
+  z-index: 2;
+  background-color: white;
+  color: $clr1;
+  font-family: FbOgen-bold;
+}
+
 @mixin table-primary {
   table {
     min-width: 700px;

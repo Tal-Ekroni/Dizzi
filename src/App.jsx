@@ -40,7 +40,7 @@ function App() {
           }
         })}
       </Routes>
-      {isShowFooter() && <Footer />}
+      {/* {isShowFooter() && <Footer />} */}
     </div>
   )
 }
