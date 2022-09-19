@@ -5,7 +5,8 @@ export const carService = {
     getById,
     save,
     remove,
-    getEmptyCar
+    getEmptyCar,
+    getEmptySubModel
 }
 
 const key = 'cars'
@@ -30,50 +31,43 @@ function save(car) {
 
 function getEmptyCar() {
     return {
-        _id: "test",
         manufacturer: "",
         model: "",
         year: "2022",
         category: "",
         price: 0,
-        subModels: [
-            {
-                name: "",
-                safety: 7,
-                motor: {
-                    type: "",
-                    volume: 0,
-                    horsePower: 0,
-                    momentum: 0,
-                    isAutoGear: false,
-                },
-                breaks: {
-                    system: "",
-                    front: "",
-                    back: "",
-                },
-                suspensions: {
-                    fron: "",
-                    back: "",
-                },
-                measurments: {
-                    height: 0,
-                    width: 0,
-                    trunk: 0,
-                    clearance: 0,
-                },
-                features: {
-                    isMagnezioumWheels: false,
-                    isPanoramicRoof: false,
-                    isMultimediaSystem: false,
-                    isCarPlay: false,
-                    isLeatherCovers: false,
-                    isDigitalClocks: false,
-                    isStartButton: false,
-                    isElectricHandBreaks: false,
-                },
-            }
-        ],
+        subModels: [getEmptySubModel()],
+    }
+}
+
+function getEmptySubModel() {
+    return {
+        name: "תת דגם חדש",
+        safety: 1,
+        motorType: "",
+        volume: 0,
+        horsePower: 0,
+        momentum: 0,
+        isAutoGear: true,
+        breakesSystem: "",
+        breakesFront: "",
+        breakesBack: "",
+        suspensionsFront: "",
+        suspensionsBack: "",
+        height: 0,
+        width: 0,
+        trunk: 0,
+        clearance: 0,
+        features: {
+            isMagnezioumWheels: false,
+            isPanoramicRoof: false,
+            isMultimediaSystem: false,
+            isCarPlay: false,
+            isLeatherCovers: false,
+            isDigitalClocks: false,
+            isStartButton: false,
+            isElectricHandBreaks: false,
+        },
     }
 }
 

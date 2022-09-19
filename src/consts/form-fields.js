@@ -49,37 +49,22 @@ export const mainCarFields = [
             he: 'מחיר'
         }
     },
-    // {
-    //     name: 'height',
-    //     type: 'number',
-    //     label: {
-    //         he: 'גובה'
-    //     }
-    // },
-    // {
-    //     name: 'trunk',
-    //     type: 'number',
-    //     label: {
-    //         he: 'תא מטען'
-    //     }
-    // },
-
-
-
-
 ]
 
 export const subModelFields = [
     {
         name: 'name',
         type: 'text',
+        label: {
+            he: 'שם תת דגם'
+        },
         placeholder: {
             he: 'שם תת דגם'
         }
     },
     {
         name: 'safety',
-        type: 'range',
+        type: 'number',
         label: {
             he: 'בטיחות'
         },

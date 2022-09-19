@@ -13,7 +13,7 @@ export const DynamicInput = ({ field, handleChange, handleFeatureChange, item })
       case 'text':
         return <input type="text" {...props} />
       case 'number':
-        return <input type="number" {...props} />
+        return <input type="number" {...props} min={field?.range?.min ? +field.range.min : 0} max={field?.range?.max ? +field.range.max : Infinity}/>
       case 'range':
         return <input type="range" {...props} min={field.range.min} max={field.range.max} />
       case 'multi-check-select':

@@ -1,4 +1,4 @@
-import { subModelFields } from '../../../consts/form-fields'
+import { subModelFields } from '../../../../consts/form-fields'
 import { DynamicInput } from '../dynamic-input'
 
 export const SubModelForm = ({ subModel, onHandleChange, onHandleFeatureChange, onSaveCar, onDeleteSubModel }) => {

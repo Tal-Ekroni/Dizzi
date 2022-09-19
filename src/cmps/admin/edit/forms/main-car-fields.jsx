@@ -1,4 +1,4 @@
-import { mainCarFields } from '../../../consts/form-fields'
+import { mainCarFields } from '../../../../consts/form-fields'
 import { DynamicInput } from '../dynamic-input'
 
 export const MainCarForm = ({ car, onHandleChange, onSaveCar, onDeleteCar }) => {

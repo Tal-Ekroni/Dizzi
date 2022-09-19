@@ -12,13 +12,12 @@ export const CarDetails = () => {
   const params = useParams()
   const [car, setCar] = useState(null)
   const criteria = [
-    { kind: 'motor', subKind: 'type', title: 'סוג מנוע' },
-    { kind: 'motor', subKind: 'volume', title: 'נפח מנוע[סמ"ק]' },
-    { kind: 'motor', subKind: 'horsePower', title: 'כ"ס' },
+    { kind: 'motorType', title: 'סוג מנוע' },
+    { kind: 'volume', title: 'נפח מנוע[סמ"ק]' },
+    { kind: 'horsePower', title: 'כ"ס' },
     { kind: 'name', title: 'דגם' },
-    { kind: 'motor', subKind:'isAutoGear', title: 'תיבת הילוכים' },
+    { kind: 'isAutoGear', title: 'תיבת הילוכים' },
   ]
-  console.log(car);
 
   useEffect(() => {
     carService.getById(params.carId).then((car) => setCar(car))
@@ -53,7 +52,9 @@ export const CarDetails = () => {
           <thead>
             <tr>
               <th>דגם</th>
-              {car.subModels.map(subModel => <th key={subModel.name}>{`${car.manufacturer} ${car.model} ${subModel.name}`}</th>)}
+              {car.subModels.map((subModel) => (
+                <th key={subModel.name}>{`${car.manufacturer} ${car.model} ${subModel.name}`}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -61,11 +62,11 @@ export const CarDetails = () => {
               return (
                 <tr key={idx}>
                   <td>{crit.title}</td>
-                  {car.subModels.map(subModel => {
-                    if (typeof subModel[crit.kind][crit.subKind] === 'boolean') {
-                      return <td key={subModel.name}>{subModel[crit.kind][crit.subKind] ? 'אוטומט' : 'ידני'}</td>
+                  {car.subModels.map((subModel) => {
+                    if (crit.kind === 'isAutoGear') {
+                      return <td key={subModel.name}>{subModel[crit.kind] ? 'אוטומט' : 'ידני'}</td>
                     }
-                    return <td key={subModel.name}>{subModel[crit.kind][crit.subKind] || subModel[crit.kind] || 'מידע'}</td>
+                    return <td key={subModel.name}>{subModel[crit.kind] || 'מידע'}</td>
                   })}
                 </tr>
               )

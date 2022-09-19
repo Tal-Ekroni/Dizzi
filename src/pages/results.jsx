@@ -22,7 +22,6 @@ export const Results = () => {
     <section className="results">
       <Header />
       <Filter />
-      <button onClick={() => navigate('/edit')}>הוסף מכונית</button>
       <div className="car-list-container">{cars.length !== 0 && <CarsList cars={cars} />}</div>
       <SearchAgain />
     </section>
