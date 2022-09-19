@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import logo from '../assets/img/logo-demo.JPG'
+// import logo from '../assets/img/logo-demo.JPG'
 
 export const Logo = () => {
   const navigate = useNavigate()
@@ -9,7 +9,7 @@ export const Logo = () => {
 
   return (
     <div className="logo-container" onClick={goToHomePage}>
-      <img src={logo} alt="logo" />
+      <img src={'assets/imgs/questionnaireSvgs/logo.svg'} alt="logo" />
     </div>
   )
 }

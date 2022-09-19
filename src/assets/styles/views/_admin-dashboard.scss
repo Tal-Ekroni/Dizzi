@@ -1,5 +1,9 @@
 .admin-dashboard-container {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  min-height: 100vh;
+
+  .logo-container {
+    max-width: 200px;
+  }
 }

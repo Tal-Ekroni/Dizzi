@@ -9,11 +9,15 @@ footer {
     background-color: $clr1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "nav rights logo";
+    grid-template-areas: ' nav nav rights';
     height: 90%;
     width: 100%;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
+
+    @media screen and (min-width: 1300px) {
+      grid-template-areas: 'nav rights logo';
+    }
   }
 
   &.full {
@@ -21,8 +25,14 @@ footer {
 
     .footer-inner {
       grid-template-areas:
-        "new-search nav logo"
-        ". rights .";
+        'new-search nav logo'
+        '. rights .';
+    }
+
+    @media screen and (min-width: 1300px) {
+      grid-template-areas:
+        'new-search nav logo'
+        '. rights .';
     }
 
     button {
@@ -53,6 +63,11 @@ footer {
     grid-area: logo;
     align-self: center;
     justify-self: center;
+    max-width: 100px;
+
+    @media screen and (min-width: 880px) {
+      max-width: 200px;
+    }
   }
 
   nav {
@@ -91,10 +106,14 @@ footer {
     color: $clr1;
     font-family: FbOgen-black;
     font-size: 1.4rem;
-    width: 130px;
+    width: 100px;
     height: 30px;
     border-radius: 1rem;
     display: none;
+
+    @media screen and (min-width: 880px) {
+      width: 130px;
+    }
   }
 
   p {

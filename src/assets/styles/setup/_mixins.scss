@@ -113,9 +113,14 @@
 
 @mixin table-primary {
   table {
-    min-width: 700px;
+    width: 100%;
     border-collapse: collapse;
+    // padding-inline: 0.5rem;
     font-size: 1.3rem;
+
+    @media screen and (min-width: 700px) {
+      min-width: 700px;
+    }
 
     thead {
       background-color: #dcf9e9;

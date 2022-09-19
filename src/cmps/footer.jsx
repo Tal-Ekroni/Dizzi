@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom'
-import logo from '../assets/img/logo-demo.JPG'
+import { Logo } from './logo'
 
 export const Footer = () => {
   const location = useLocation()
@@ -8,9 +8,7 @@ export const Footer = () => {
   return (
     <footer className={`${location.pathname.includes('/results') ? 'full' : ''}`}>
       <div className="footer-inner">
-        <div className="logo-container">
-          <img src={logo} alt="" />
-        </div>
+        {location.pathname !== '/' && <Logo />}
         <nav>
           <h4>ניווט</h4>
           <ul>

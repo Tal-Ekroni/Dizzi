@@ -2,11 +2,9 @@
   color: white;
   font-family: FbOgen;
   @include questionnaireCenter;
-  .homepage-logo {
-    margin-top: 4vh;
-    position: relative;
-    z-index: 3;
-    background-color: black;
+  .logo-container {
+    max-width: 200px;
+    margin-top: 50px;
   }
   .intro-container {
     display: flex;
