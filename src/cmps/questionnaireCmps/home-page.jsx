@@ -1,4 +1,5 @@
 import logo from "../../assets/img/logo-demo.JPG"
+import homepageCar from '../../assets/img/questionnaireSvgs/homepageCar.svg'
 export default function HomePage({ setCurrentSection }) {
     return (
         <div className="home-page">
@@ -10,6 +11,7 @@ export default function HomePage({ setCurrentSection }) {
                 <p>השיבו בזריזות על מספר שאלות וקבלו  את הרכבים המושלמים עבורכם.</p>
             </section>
             <button onClick={() => { setCurrentSection('GenderPick') }}>יוצאים לדרך</button>
+            <img src={homepageCar} alt="" className="homepage-car" />
         </div>
     )
 }

@@ -1,36 +1,36 @@
 .app-header-container {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 
-    .vendor-cta {
+  .vendor-cta {
+    color: $clr1;
+    font-size: 1.5rem;
+
+    span {
+      font-family: FbOgen-black;
+    }
+  }
+
+  .nav-container {
+    background-color: $clr1;
+    color: #fff;
+
+    ul {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      button {
+        font-family: FbOgen-black;
+        background-color: #fff;
         color: $clr1;
-        font-size: 1.5rem;
-
-        span {
-            font-family: FbOgen-black;
-        }
+        border: 0;
+        border-radius: 5rem;
+        width: 150px;
+        height: 40px;
+        font-size: 1.7rem;
+      }
     }
-
-    .nav-container {
-        background-color: $clr1;
-        color: #fff;
-        
-        ul {
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            
-            button {
-                font-family: FbOgen-black;
-                background-color: #fff;
-                color: $clr1;
-                border: 0;
-                border-radius: 5rem;
-                width: 150px;
-                height: 40px;
-                font-size: 1.7rem;
-            }
-        }
-    }
+  }
 }
