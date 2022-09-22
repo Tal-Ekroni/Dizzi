@@ -2,7 +2,8 @@ export const utilService = {
     makeId,
     makeLorem,
     getRandomIntInclusive,
-    delay
+    delay,
+    priceFormat
 }
 
 function makeId(length = 6) {
@@ -36,5 +37,21 @@ function delay(ms = 1500) {
     return new Promise(resolve => {
         setTimeout(resolve, ms)
     })
+}
+
+function priceFormat(price) {
+    let priceStr = price + ''
+    if (priceStr.length <= 3) return price
+
+    let formattedPrice = ''
+    let digitsCount = 0
+
+    while (priceStr.length > 0) {
+        if (digitsCount % 3 === 0 && formattedPrice.length !== 0) formattedPrice = `,${formattedPrice}`
+        formattedPrice = `${priceStr.charAt(priceStr.length - 1)} ${formattedPrice}`
+        priceStr = priceStr.substring(0, priceStr.length - 1)
+        digitsCount++
+    }
+    return formattedPrice.split().reverse().join()
 }
 
