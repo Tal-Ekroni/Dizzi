@@ -53,7 +53,12 @@ export const CarDetails = () => {
             <tr>
               <th>דגם</th>
               {car.subModels.map((subModel) => (
-                <th key={subModel.name}>{`${car.manufacturer} ${car.model} ${subModel.name}`}</th>
+                <th key={subModel.name}>
+                  <p>
+                    {car.manufacturer} {car.model}
+                  </p>
+                  <p>{subModel.name}</p>
+                </th>
               ))}
             </tr>
           </thead>

@@ -62,6 +62,11 @@
       margin-bottom: 0.5rem;
     }
 
+    th {
+      line-height: 1.2;
+      padding-block: 0.4rem;
+    }
+
     @include table-primary;
   }
 }

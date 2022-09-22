@@ -1,6 +1,5 @@
-import logo from '../assets/img/logo-demo.JPG'
-
 import { useNavigate } from 'react-router-dom'
+import { Logo } from './logo'
 
 export const AppHeader = () => {
   const navigate = useNavigate()
@@ -19,7 +18,7 @@ export const AppHeader = () => {
               <button onClick={() => navigate(-1)}>⇨ חזור</button>
             </li>
             <li>
-              <img onClick={() => navigate('/')} src={logo} alt="website logo" />
+              <Logo />
             </li>
             <li>
               <button onClick={() => navigate('/')}>חיפוש חדש</button>
