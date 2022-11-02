@@ -11,16 +11,50 @@ export const CarTableList = () => {
     { type: 'manufacturer', he: 'יצרן' },
     { type: 'model', he: 'דגם' },
     { type: 'category', he: 'קטגוריה' },
-    { type: 'subModels', he: 'תתי דגם' },
+    { type: 'subModel', he: 'תתי דגם' },
   ]
 
   useEffect(() => {
     carService.query().then((cars) => setCars(cars))
   }, [])
 
+  const submit = (file) => {
+    // setFileName(file.name)
+    // setCsvFile(file)
+    const reader = new FileReader()
+
+    reader.onload = function ({ target: { result } }) {
+      processCsv(result)
+    }
+
+    reader.readAsText(file)
+  }
+
+  const processCsv = (str, sep = ',') => {
+    const headers = str.slice(0, str.indexOf('\n')).split(sep)
+    const rows = str.slice(str.indexOf('\n') + 1).split('\n')
+    const arr = rows.map((r) => {
+      const values = r.split(sep)
+      const eachObj = headers.reduce((obj, header, i) => {
+        obj[header] = values[i] === 'x' ? false : values[i] === 'v' ? true : values[i]
+        return obj
+      }, {})
+      return eachObj
+    })
+    carService.saveMultiCars(arr)
+  }
+
   return (
     <div className="car-table-container">
-      <h1>רשימת מכוניות</h1>
+      <div className="header">
+        <h1>רשימת מכוניות</h1>
+        <form>
+          <label className="upload-file">
+            <input type="file" onChange={(e) => submit(e.target.files[0])} />
+            העלה קובץ CSV
+          </label>
+        </form>
+      </div>
       {cars ? (
         <table>
           <thead>
@@ -32,17 +66,19 @@ export const CarTableList = () => {
             </tr>
           </thead>
           <tbody>
-            {cars.map((car) => (
-              <tr key={car._id}>
-                {tableCriteria.map(({ type }) => {
-                  if (type === 'subModels') return <td key={type}>{car[type].length}</td>
-                  return <td key={type}>{car[type]}</td>
-                })}
-                <td>
-                  <button onClick={() => navigate(`/admin/edit/${car._id}`)}>עריכה</button>
-                </td>
-              </tr>
-            ))}
+            {cars.map((car) => {
+              return (
+                <tr key={car._id}>
+                  {tableCriteria.map(({ type }) => {
+                    return <td key={type}>{car[type] || ''}</td>
+                  })}
+
+                  <td>
+                    <button onClick={() => navigate(`/admin/edit/${car._id}`)}>עריכה</button>
+                  </td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       ) : (

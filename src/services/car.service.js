@@ -6,7 +6,8 @@ export const carService = {
     save,
     remove,
     getEmptyCar,
-    getEmptySubModel
+    getEmptySubModel,
+    saveMultiCars
 }
 
 const key = 'cars'
@@ -27,6 +28,10 @@ function save(car) {
     } else {
         return storageService.post(key, car)
     }
+}
+
+async function saveMultiCars(cars) {
+    storageService.postMany(key, cars)
 }
 
 function getEmptyCar() {

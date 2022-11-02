@@ -5,7 +5,7 @@ export const storageService = {
   post,
   put,
   remove,
-  // postMany
+  postMany
 };
 
 function query(entityType, delay = 1200) {
@@ -71,12 +71,12 @@ function _makeId(length = 5) {
   return text
 }
 
-// function postMany(entityType, newEntities) {
-//     return query(entityType)
-//         .then(entities => {
-//             newEntities = newEntities.map(entity => ({ ...entity, _id: _makeId() }))
-//             entities.push(...newEntities)
-//             _save(entityType, entities)
-//             return entities
-//         })
-// }
+function postMany(entityType, newEntities) {
+  return query(entityType)
+    .then(entities => {
+      newEntities = newEntities.map(entity => ({ ...entity, _id: _makeId() }))
+      entities.push(...newEntities)
+      _save(entityType, entities)
+      return entities
+    })
+}
