@@ -1,14 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
 import { questionnaireDynamicCmps as cmpsData } from "../../consts/questionnaireCmpsData";
+import { carFilterByAtom } from "../../state/atoms/global";
 
 export default function DynamicPickGenderGearbox({
-  questionnaire,
-  setQuestionnaire,
   currentSection,
   setCurrentSection,
 }) {
   const navigate = useNavigate();
   const section = cmpsData[currentSection];
+  const [questionnaire, setQuestionnaire] = useRecoilState(carFilterByAtom);
 
   const onChooseOption = (choise) => {
     setQuestionnaire(

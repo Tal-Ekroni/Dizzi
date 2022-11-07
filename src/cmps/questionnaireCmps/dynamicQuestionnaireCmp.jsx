@@ -1,12 +1,13 @@
+import { useRecoilState } from "recoil";
 import { questionnaireDynamicCmps as cmpsData } from "../../consts/questionnaireCmpsData";
+import { carFilterByAtom } from "../../state/atoms/global";
 
 export default function DynamicQuestionnaireCmp({
-  questionnaire,
-  setQuestionnaire,
   currentSection,
   setCurrentSection,
 }) {
   const section = cmpsData[currentSection];
+  const [questionnaire, setQuestionnaire] = useRecoilState(carFilterByAtom);
 
   const onChooseOption = (userPick) => {
     let currentUserPicks = [...questionnaire[section.stateName]];
