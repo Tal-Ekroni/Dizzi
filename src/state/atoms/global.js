@@ -13,3 +13,13 @@ export const carFilterByAtom = atom({
   },
 });
 
+export const assembledCarResultsAtom = atom({
+  key: 'assembledCarResultsAtom',
+  default: []
+})
+
+export const selectedCarModelAtom = atom({
+  key: 'selectedCarModelAtom',
+  default: null
+})
+

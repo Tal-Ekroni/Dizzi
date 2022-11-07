@@ -97,7 +97,17 @@ async function query(carFilterBy) {
       return !isManual;
     });
   }
-  return cars;
+  const assembledCars = assembleCars(cars)
+  return { cars, assembledCars };
+}
+
+function assembleCars(cars) {
+  const res = {}
+  cars.map(car => {
+    if (res[car.model]) res[car.model].push(car)
+    else res[car.model] = [car]
+  })
+  return res
 }
 
 function getById(carId) {

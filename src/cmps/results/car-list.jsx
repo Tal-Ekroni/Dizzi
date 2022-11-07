@@ -1,6 +1,6 @@
 import { CarPreview } from './car-preview'
 
-export const CarsList = ({ cars }) => {
+export const CarsList = ({ cars, assembledCars }) => {
   return (
     <section className="car-list">
       {cars.map((car, idx) => (

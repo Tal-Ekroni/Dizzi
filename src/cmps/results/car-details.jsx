@@ -7,22 +7,25 @@ import carBack from '../../assets/img/car-details-back.webp'
 import more1 from '../../assets/img/car-details-more/more1.png'
 import more2 from '../../assets/img/car-details-more/more2.png'
 import more3 from '../../assets/img/car-details-more/more3.png'
+import { useRecoilValue } from 'recoil'
+import { carResultsByModelSelector } from '../../state/selectors/results'
+import { selectedCarModelAtom } from '../../state/atoms/global'
 
 export const CarDetails = () => {
   const params = useParams()
   const [car, setCar] = useState(null)
+  const carsFromSelectedModel = useRecoilValue(carResultsByModelSelector)
+  const model = useRecoilValue(selectedCarModelAtom)
   const criteria = [
-    { kind: 'motorType', title: 'סוג מנוע' },
-    { kind: 'volume', title: 'נפח מנוע[סמ"ק]' },
+    { kind: 'engine', title: 'סוג מנוע' },
     { kind: 'horsePower', title: 'כ"ס' },
-    { kind: 'name', title: 'דגם' },
-    { kind: 'isAutoGear', title: 'תיבת הילוכים' },
+    { kind: 'model', title: 'דגם' },
+    { kind: 'isManual', title: 'תיבת הילוכים' },
   ]
 
   useEffect(() => {
     carService.getById(params.carId).then((car) => setCar(car))
   }, [])
-
   return car ? (
     <section className="car-details-container">
       <div className="car-img-container">
@@ -52,12 +55,11 @@ export const CarDetails = () => {
           <thead>
             <tr>
               <th>דגם</th>
-              {car.subModels.map((subModel) => (
-                <th key={subModel.name}>
+              {carsFromSelectedModel.map((car) => (
+                <th key={car.subModel}>
                   <p>
-                    {car.manufacturer} {car.model}
+                    {car.model} {car.subModel}
                   </p>
-                  <p>{subModel.name}</p>
                 </th>
               ))}
             </tr>
@@ -67,11 +69,11 @@ export const CarDetails = () => {
               return (
                 <tr key={idx}>
                   <td>{crit.title}</td>
-                  {car.subModels.map((subModel) => {
-                    if (crit.kind === 'isAutoGear') {
-                      return <td key={subModel.name}>{subModel[crit.kind] ? 'אוטומט' : 'ידני'}</td>
+                  {carsFromSelectedModel.map((car) => {
+                    if (crit.kind === 'isManual') {
+                      return <td key={car.subModel}>{car[crit.kind] ? 'ידני' : 'אוטומט'}</td>
                     }
-                    return <td key={subModel.name}>{subModel[crit.kind] || 'מידע'}</td>
+                    return <td key={car.subModel}>{car[crit.kind] || 'מידע'}</td>
                   })}
                 </tr>
               )
