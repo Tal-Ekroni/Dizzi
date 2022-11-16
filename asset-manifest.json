@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Dizzi/static/css/main.28d613e8.css",
-    "main.js": "/Dizzi/static/js/main.c459e023.js",
+    "main.css": "/Dizzi/static/css/main.447554e1.css",
+    "main.js": "/Dizzi/static/js/main.aa27f771.js",
     "static/media/homepageCar.svg": "/Dizzi/static/media/homepageCar.97cb5a29e1b06f30e1b3337bbbf66621.svg",
     "static/media/more2.png": "/Dizzi/static/media/more2.7a725df1802803659b6b.png",
     "static/media/more3.png": "/Dizzi/static/media/more3.6685a86fdcf418db5f64.png",
@@ -14,11 +14,11 @@
     "static/media/car1.JPG": "/Dizzi/static/media/car1.6f2741b614b932c17889.JPG",
     "static/media/car2.JPG": "/Dizzi/static/media/car2.b02b424e735a766da487.JPG",
     "index.html": "/Dizzi/index.html",
-    "main.28d613e8.css.map": "/Dizzi/static/css/main.28d613e8.css.map",
-    "main.c459e023.js.map": "/Dizzi/static/js/main.c459e023.js.map"
+    "main.447554e1.css.map": "/Dizzi/static/css/main.447554e1.css.map",
+    "main.aa27f771.js.map": "/Dizzi/static/js/main.aa27f771.js.map"
   },
   "entrypoints": [
-    "static/css/main.28d613e8.css",
-    "static/js/main.c459e023.js"
+    "static/css/main.447554e1.css",
+    "static/js/main.aa27f771.js"
   ]
 }
