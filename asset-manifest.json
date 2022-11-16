@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Dizzi/static/css/main.e955f6c3.css",
+    "main.js": "/Dizzi/static/js/main.0e470b76.js",
+    "static/media/homepageCar.svg": "/Dizzi/static/media/homepageCar.97cb5a29e1b06f30e1b3337bbbf66621.svg",
+    "static/media/more2.png": "/Dizzi/static/media/more2.7a725df1802803659b6b.png",
+    "static/media/more3.png": "/Dizzi/static/media/more3.6685a86fdcf418db5f64.png",
+    "static/media/more1.png": "/Dizzi/static/media/more1.9bf87c2e0db60f349919.png",
+    "static/media/car-details-back.webp": "/Dizzi/static/media/car-details-back.d661ee88f61af310563d.webp",
+    "static/media/FbOgen-Black.otf": "/Dizzi/static/media/FbOgen-Black.e75d434bb00fc80a6ec0.otf",
+    "static/media/FbOgen-Regular.otf": "/Dizzi/static/media/FbOgen-Regular.ebf895aed9085ef94279.otf",
+    "static/media/FbOgen-Bold.otf": "/Dizzi/static/media/FbOgen-Bold.7d22f681bf9957270483.otf",
+    "static/media/car3.JPG": "/Dizzi/static/media/car3.62ec4d1ef91981d23a90.JPG",
+    "static/media/car1.JPG": "/Dizzi/static/media/car1.6f2741b614b932c17889.JPG",
+    "static/media/car2.JPG": "/Dizzi/static/media/car2.b02b424e735a766da487.JPG",
+    "index.html": "/Dizzi/index.html",
+    "main.e955f6c3.css.map": "/Dizzi/static/css/main.e955f6c3.css.map",
+    "main.0e470b76.js.map": "/Dizzi/static/js/main.0e470b76.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e955f6c3.css",
+    "static/js/main.0e470b76.js"
+  ]
+}
