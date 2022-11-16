@@ -24,7 +24,7 @@ async function query(carFilterBy) {
     maxPrice,
   } = carFilterBy;
 
-  if (carTypes.length) {
+  if (carTypes && carTypes.length) {
     cars = cars.filter(({ category }) => {
       return carTypes.includes(category);
     });
