@@ -5,9 +5,9 @@ export const questionnaireDynamicCmps = {
     header: "איזה סוג רכב אתה מעדיף?",
     subHeader: "*ניתן לבחור יותר מסוג אחד",
     data: [
-      { text: "מנהלים", svgPath: "assets/imgs/questionnaireSvgs/manager.svg" },
-      { text: "משפחתי", svgPath: "assets/imgs/questionnaireSvgs/family.svg" },
-      { text: "קטן", svgPath: "assets/imgs/questionnaireSvgs/mini.svg" },
+      { text: "מנהלים", svgPath: "../assets/imgs/questionnaireSvgs/manager.svg" },
+      { text: "משפחתי", svgPath: "/assets/imgs/questionnaireSvgs/family.svg" },
+      { text: "קטן", svgPath: "./assets/imgs/questionnaireSvgs/mini.svg" },
       { text: "פנאי ושטח", svgPath: "assets/imgs/questionnaireSvgs/suv.svg" },
       { text: "מסחרי", svgPath: "assets/imgs/questionnaireSvgs/12.svg" },
       { text: "ספורט", svgPath: "assets/imgs/questionnaireSvgs/11.svg" },
