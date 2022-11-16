@@ -53,28 +53,33 @@ export default function DynamicQuestionnaireCmp({
         {section.nextSectionBtnOption.map((btn) => (
           <button
             onClick={() => {
-              setCurrentSection(section.nextSection);
+              if (questionnaire.threeImportantFeaturs.includes("אבזור")) {
+                setQuestionnaire({
+                  ...questionnaire,
+                  threeImportantFeaturs:
+                    questionnaire.threeImportantFeaturs.filter(
+                      (feature) => feature !== "אבזור"
+                    ),
+                });
+                setCurrentSection("AccessoriesPick");
+              } else if (
+                questionnaire.threeImportantFeaturs.includes("תא מטען גדול")
+              ) {
+                setQuestionnaire({
+                  ...questionnaire,
+                  threeImportantFeaturs:
+                    questionnaire.threeImportantFeaturs.filter(
+                      (feature) => feature !== "תא מטען גדול"
+                    ),
+                });
+                setCurrentSection("LuggagePick");
+              } else setCurrentSection(section.nextSection);
             }}
           >
             {btn}
           </button>
         ))}
       </div>
-      {/* <button
-        onClick={() => {
-          setCurrentSection(section.nextSection);
-        }}
-      >
-        {section.nextSectionBtnOption[0].text}
-      </button>
-
-      <button
-        onClick={() => {
-          setCurrentSection(section.nextSection);
-        }}
-      >
-        תקדם
-      </button> */}
     </div>
   );
 }

@@ -79,11 +79,16 @@ export default function BudgetPick({ setCurrentSection }) {
           }}
           getAriaValueText={valuetext}
           disableSwap
-          max={questionnaire.isFullPayment ? 1000000 : 8000}
+          step={questionnaire.isFullPayment? 1000:200}
+          max={questionnaire.isFullPayment ? 500000 : 8000}
         />
       </div>
       <button
         onClick={() => {
+          const minPrice=questionnaire.isFullPayment? value1[0]:value2[0]
+          const maxPrice=questionnaire.isFullPayment? value1[1]:value2[1]
+
+          setQuestionnaire({...questionnaire,minPrice,maxPrice})
           setCurrentSection("CarType");
         }}
       >

@@ -10,6 +10,8 @@ export const carFilterByAtom = atom({
     importantAccessories: [],
     luggageTypes: [],
     gearboxType: "",
+    minPrice:0,
+    maxPrice:0
   },
 });
 
