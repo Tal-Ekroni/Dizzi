@@ -80,7 +80,7 @@ export default function BudgetPick({ setCurrentSection }) {
           getAriaValueText={valuetext}
           disableSwap
           step={questionnaire.isFullPayment? 1000:200}
-          max={questionnaire.isFullPayment ? 400000 : 8000}
+          max={questionnaire.isFullPayment ? 500000 : 8000}
         />
       </div>
       <button
