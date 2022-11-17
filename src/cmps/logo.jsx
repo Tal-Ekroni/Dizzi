@@ -7,5 +7,5 @@ export const Logo = () => {
     navigate('/')
   }
 
-  return <img className="logo-container" src={'/assets/imgs/questionnaireSvgs/logo.svg'} alt="logo" onClick={goToHomePage} />
+  return <img className="logo-container" src={'assets/imgs/questionnaireSvgs/logo.svg'} alt="logo" onClick={goToHomePage} />
 }

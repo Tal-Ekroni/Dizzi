@@ -14,12 +14,24 @@ const key = "cars";
 
 async function query(carFilterBy) {
   let cars = await storageService.query(key);
-  const { carTypes, threeImportantFeaturs, importantAccessories, gearboxType } =
-    carFilterBy;
+  const {
+    carTypes,
+    threeImportantFeaturs,
+    importantAccessories,
+    gearboxType,
+    isFullPayment,
+    minPrice,
+    maxPrice,
+  } = carFilterBy;
 
-  if (carTypes.length) {
+  if (carTypes && carTypes.length) {
     cars = cars.filter(({ category }) => {
       return carTypes.includes(category);
+    });
+  }
+  if (minPrice && maxPrice) {
+    cars = cars.filter(({ price }) => {
+      return minPrice <= +price && +price <= maxPrice;
     });
   }
 
@@ -30,7 +42,6 @@ async function query(carFilterBy) {
       });
     }
     if (threeImportantFeaturs.includes("בטיחות")) {
-      console.log("yo", cars);
       cars = cars.filter(({ safetr }) => {
         return safetr > 4;
       });
@@ -52,11 +63,11 @@ async function query(carFilterBy) {
         return hasMultimediaSystem;
       });
     }
-    // if (importantAccessories.includes("גלגלי מגנזיום")) {
-    //   cars = cars.filter(({ has }) => {
-    //     return hasMultimediaSystem;
-    //   });
-    // }
+    if (importantAccessories.includes("גלגלי מגנזיום")) {
+      cars = cars.filter(({ wheelCovers }) => {
+        return wheelCovers && wheelCovers !== "X";
+      });
+    }
     if (importantAccessories.includes("CAR PLAY")) {
       cars = cars.filter(({ hasCarplay }) => {
         return hasCarplay;
@@ -97,17 +108,17 @@ async function query(carFilterBy) {
       return !isManual;
     });
   }
-  const assembledCars = assembleCars(cars)
+  const assembledCars = assembleCars(cars);
   return { cars, assembledCars };
 }
 
 function assembleCars(cars) {
-  const res = {}
-  cars.map(car => {
-    if (res[car.model]) res[car.model].push(car)
-    else res[car.model] = [car]
-  })
-  return res
+  const res = {};
+  cars.map((car) => {
+    if (res[car.model]) res[car.model].push(car);
+    else res[car.model] = [car];
+  });
+  return res;
 }
 
 function getById(carId) {

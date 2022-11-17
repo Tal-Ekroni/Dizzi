@@ -12,7 +12,7 @@ const minDistance = 10;
 export default function BudgetPick({ setCurrentSection }) {
   const [questionnaire, setQuestionnaire] = useRecoilState(carFilterByAtom);
 
-  const [value1, setValue1] = useState([0, 20000]);
+  const [value1, setValue1] = useState([100000, 400000]);
   const [value2, setValue2] = useState([0, 1000]);
   const handleChange1 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -79,11 +79,16 @@ export default function BudgetPick({ setCurrentSection }) {
           }}
           getAriaValueText={valuetext}
           disableSwap
-          max={questionnaire.isFullPayment ? 1000000 : 8000}
+          step={questionnaire.isFullPayment? 1000:200}
+          max={questionnaire.isFullPayment ? 400000 : 8000}
         />
       </div>
       <button
         onClick={() => {
+          const minPrice=questionnaire.isFullPayment? value1[0]:value2[0]
+          const maxPrice=questionnaire.isFullPayment? value1[1]:value2[1]
+
+          setQuestionnaire({...questionnaire,minPrice,maxPrice})
           setCurrentSection("CarType");
         }}
       >

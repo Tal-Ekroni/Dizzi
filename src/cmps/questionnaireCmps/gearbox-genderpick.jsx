@@ -34,7 +34,7 @@ export default function DynamicPickGenderGearbox({
           />
           <p>{section.options[0].text}</p>
         </div>
-        <div className="option-container">
+        <div className={`option-container ${currentSection==="genderPick" ?"option-scale" : ""}`}>
           <img
             onClick={() => {
               onChooseOption(section.options[1].option);
