@@ -26,10 +26,11 @@ export const CarDetails = () => {
   useEffect(() => {
     carService.getById(params.carId).then((car) => setCar(car))
   }, [])
+  console.log(car)
   return car ? (
     <section className="car-details-container">
       <div className="car-img-container">
-        <img src={carBack} alt="" />
+        <img src={car.backgroungPhoto} alt="" />
         <h3 className="title">{`${car.manufacturer} ${car.model}`}</h3>
       </div>
       <div className="description-container">

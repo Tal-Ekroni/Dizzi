@@ -11,7 +11,6 @@ export const CarPreview = ({ car, isBestMatch }) => {
   const cars = [car1, car2, car3]
   const navigate = useNavigate()
   const setSelectedCarModel = useSetRecoilState(selectedCarModelAtom)
-  console.log(car)
 
   const getRandCarImg = () => {
     return cars[utilService.getRandomIntInclusive(0, cars.length - 1)]
@@ -26,7 +25,7 @@ export const CarPreview = ({ car, isBestMatch }) => {
         </div>
       </div>
       <div className="car-img-container">
-        <img src={getRandCarImg()} alt="" />
+        <img src={car[1][0].noBackgroungPhoto} alt="" />
       </div>
       <div className="car-details">
         <h3 className="title">{`${car[1][0].manufacturer} ${car[1][0].model}`}</h3>

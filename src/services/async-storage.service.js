@@ -13,7 +13,7 @@ function query(entityType, delay = 1200) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (!cars) {
-        cars = data
+        cars = []
         _save(entityType, cars)
       }
       resolve(cars);
