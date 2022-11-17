@@ -121,12 +121,12 @@ export const questionnaireDynamicCmps = {
       {
         option: "Manual",
         text: "גיר ידני",
-        svgPath: "assets/imgs/questionnaireSvgs/34.svg",
+        svgPath: "assets/imgs/questionnaireSvgs/manual.svg",
       },
       {
         option: "Auto",
         text: "גיר אוטומטי",
-        svgPath: "assets/imgs/questionnaireSvgs/33.svg",
+        svgPath: "assets/imgs/questionnaireSvgs/automatic.svg",
       },
     ],
     btnOption: { option: "Both", text: "לא חשוב לי" },
